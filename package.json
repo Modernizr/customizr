@@ -7,7 +7,8 @@
     "customizr": "bin/customizr"
   },
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "postinstall": "cd node_modules/modernizr; npm install --production; cd -"
   },
   "repository": {
     "type": "git",
