@@ -1,0 +1,26 @@
+{
+  "name": "customizr",
+  "version": "0.0.0",
+  "description": "",
+  "main": "src",
+  "bin": {
+    "customizr": "bin/customizr"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/doctyper/Customizr.git"
+  },
+  "keywords": [
+    "modernizr",
+    "customizr"
+  ],
+  "author": "Richard Herrera",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/doctyper/Customizr/issues"
+  },
+  "homepage": "https://github.com/doctyper/Customizr"
+}
