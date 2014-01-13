@@ -22,5 +22,14 @@
   "bugs": {
     "url": "https://github.com/doctyper/Customizr/issues"
   },
-  "homepage": "https://github.com/doctyper/Customizr"
+  "homepage": "https://github.com/doctyper/Customizr",
+  "dependencies": {
+    "deep-equal": "~0.1.2",
+    "colors": "~0.6.2",
+    "underscore": "~1.5.2",
+    "mkdirp": "~0.3.5",
+    "promised-io": "~0.3.4",
+    "optimist": "~0.6.0",
+    "glob": "~3.2.8"
+  }
 }
