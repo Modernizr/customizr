@@ -246,7 +246,9 @@ module.exports = function (modernizrPath) {
 			}
 
 			// Exclude generated file
-			settings.files.push("!" + settings.dest);
+			if (settings.dest) {
+				settings.files.push("!" + settings.dest);
+			}
 
 			// And exclude all files in this current directory
 			settings.files.push("!" + path.join(__dirname.replace(cwd + path.sep, ""), "**", "*"));

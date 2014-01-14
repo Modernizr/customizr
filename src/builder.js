@@ -65,9 +65,15 @@ module.exports = function (modernizrPath) {
 
 				utils.log.writeln("No config or test changes detected".bold.white);
 				utils.log.ok("The build step has been bypassed. Use `--force` to override.".grey);
-				utils.log.ok(("Your current file can be found in " + settings.dest).grey);
 
-				return deferred.resolve();
+				if (settings.dest) {
+					utils.log.ok(("Your current file can be found in " + settings.dest).grey);
+				}
+
+				return deferred.resolve({
+					result: null,
+					options: modernizrOptions
+				});
 			}
 
 			// Set verbosity
