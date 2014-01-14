@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "rm -fr build; node test/generate-tests.js; node test/runner.js",
-    "postinstall": "if [ -d node_modules/modernizr ]; then ( cd node_modules/modernizr; npm install --production; cd -; ); fi"
+    "postinstall": "if [[ -d node_modules/modernizr ]]; then ( cd node_modules/modernizr; npm install --production; cd -; ); fi"
   },
   "repository": {
     "type": "git",
