@@ -7,7 +7,7 @@
     "customizr": "bin/customizr"
   },
   "scripts": {
-    "test": "npm test",
+    "test": "rm -fr build; node test/generate-tests.js; node test/runner.js",
     "postinstall": "cd node_modules/modernizr; npm install --production; cd -"
   },
   "repository": {
@@ -34,5 +34,10 @@
     "optimist": "~0.6.0",
     "glob": "~3.2.8",
     "nopt": "~2.1.2"
+  },
+  "devDependencies": {
+    "mocha": "~1.14.0",
+    "nexpect": "~0.2.4",
+    "expect.js": "~0.2.0"
   }
 }

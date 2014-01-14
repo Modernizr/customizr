@@ -1,0 +1,9 @@
+{
+	"dest": "build/modernizr-exclude.js",
+	"excludeTests": [
+		"applicationcache",
+		"emoji",
+		"notification"
+	],
+	"uglify": false
+}
