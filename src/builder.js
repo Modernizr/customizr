@@ -93,14 +93,18 @@ module.exports = function (modernizrPath) {
 
 			var modernizr = require("modernizr");
 
-			modernizr.build(modernizrOptions, function (result) {
-				utils.log.ok();
-				clearInterval(_interval);
+			modernizr.build(modernizrOptions, {
+				min: minify,
+				verbose: (_verbose || false),
+				callback: function (result) {
+					utils.log.ok();
+					clearInterval(_interval);
 
-				// Write code to file
-				this.builder.writeCodeToFile(result, settings);
-				return deferred.resolve(modernizrOptions);
-			}.bind(this));
+					// Write code to file
+					this.builder.writeCodeToFile(result, settings);
+					return deferred.resolve(modernizrOptions);
+				}.bind(this)
+			});
 
 			return deferred.promise;
 		}
