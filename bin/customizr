@@ -11,11 +11,12 @@ var opts = nopt({
 	help: Boolean,
 	version: Boolean,
 	config: path,
-	path: path
+	force: Boolean
 }, {
 	h: "--help",
 	v: "--version",
-	c: "--config"
+	c: "--config",
+	f: "--force"
 });
 
 function help() {
@@ -26,6 +27,7 @@ function help() {
 		"  -h, --help           # Print options and usage",
 		"  -v, --version        # Print the version number",
 		"  -c, --config         # Path to your Modernizr config JSON file",
+		"  -f, --force          # Ignore cached versions and force build Modernizr",
 		""
 	];
 
