@@ -120,7 +120,7 @@ module.exports = function (modernizrPath) {
 				}
 
 				return deferred.resolve({
-					result: result,
+					result: (settings.uglify ? result.min : result.code),
 					options: modernizrOptions
 				});
 			}.bind(this));
