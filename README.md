@@ -1,6 +1,6 @@
 # customizr
 
-[![Build Status](https://travis-ci.org/Modernizr/grunt-modernizr.png?branch=master,develop)](https://travis-ci.org/Modernizr/grunt-modernizr)
+[![Build Status](https://travis-ci.org/doctyper/customizr.png?branch=master,develop)](https://travis-ci.org/doctyper/customizr)
 
 ##### *tl;dr:* This tool crawls through your project files, gathers up your references to Modernizr tests and outputs a lean, mean Modernizr machine.
 
@@ -12,11 +12,11 @@ When you're ready to build, `customizr` will crawl your project for Modernizr te
 
 ## Use with Grunt
 
-A Grunt wrapper is available at [LINK TO GRUNT-MODERNIZR](#somelink)
+A Grunt wrapper is available at: [https://github.com/Modernizr/grunt-modernizr](https://github.com/Modernizr/grunt-modernizr)
 
 ## Use with Gulp
 
-A Gulp wrapper is available at [LINK TO GULP-MODERNIZR](#somelink)
+A Gulp wrapper is available at: [https://github.com/doctyper/grunt-modernizr](https://github.com/doctyper/grunt-modernizr)
 
 ## Getting Started
 
