@@ -5,7 +5,7 @@ var fs = require("fs"),
 	pkg = require("../package.json"),
 	nopt = require("nopt"),
 	path = require("path"),
-	Customizr = require("../src");
+	customizr = require("../src");
 
 var opts = nopt({
 	help: Boolean,
@@ -52,5 +52,5 @@ if (opts.help) {
 		}
 	}
 
-	return new Customizr(config, process.exit);
+	return customizr(config, process.exit);
 }
