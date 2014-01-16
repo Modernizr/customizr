@@ -118,7 +118,7 @@ module.exports = function (modernizrPath) {
 			}
 		},
 
-		readFile : function (file, metadata, encoding, deferred) {
+		readFile : function (file, metadata, deferred) {
 			var stream = fs.createReadStream(file);
 
 			stream.on("data", function (data) {
@@ -134,14 +134,13 @@ module.exports = function (modernizrPath) {
 
 		readFilesAsync : function (files, metadata) {
 			var deferred = new promise.Deferred(),
-				encoding = "utf8",
 				i, j, last;
 
 			this.currentFile = 0;
 			this.totalFiles = files.length;
 
 			for (i = 0, j = files.length; i < j; i++) {
-				this.readFile(files[i], metadata, encoding, deferred);
+				this.readFile(files[i], metadata, deferred);
 			}
 
 			return deferred.promise;
