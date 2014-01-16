@@ -14,14 +14,26 @@ var nexpect = require("nexpect");
 var tests = "Intl, adownload, animation, apng, applicationcache, audio, audioloop, audiopreload, backgroundcliptext, backgroundsize, batteryapi, bgpositionshorthand, bgpositionxy, bgrepeatround, bgrepeatspace, bgsizecover, blobconstructor, blobworkers, borderimage, borderradius, boxshadow, boxsizing, canvas, canvastext, capture, checked, classlist, contains, contenteditable, contentsecuritypolicy, contextmenu, cookies, cors, createelement-attrs, createelementattrs, cssanimations, csscalc, csscolumns, cssfilters, cssgradients, csshyphens, cssmask, csspointerevents, csspositionsticky, csspseudoanimations, csspseudotransitions, cssreflections, cssremunit, cssresize, cssscrollbar, csstransforms, csstransforms3d, csstransitions, cssvhunit, cssvmaxunit, cssvminunit, cssvwunit, cubicbezierrange, customprotocolhandler, dart, datalistelem, dataset, datauri, dataview, dataworkers, details, devicemotion, deviceorientation, directory, display-runin, displaytable, documentfragment, draganddrop, ellipsis, emoji, es5array, es5date, es5function, es5object, es5string, eventsource, exiforientation, fileinput, filereader, filesystem, flash, flexbox, flexboxlegacy, flexboxtweener, flexwrap, fontface, formattribute, formvalidation, framed, fullscreen, gamepads, generatedcontent, geolocation, getrandomvalues, getusermedia, hashchange, history, hsla, ie8compat, indexeddb, inlinesvg, input, inputformaction, inputtypes, jpegxr, json, lastchild, localizednumber, localstorage, lowbandwidth, lowbattery, mathml, mediaqueries, meter, microdata, multiplebgs, notification, nthchild, objectfit, olreversed, oninput, opacity, outputelem, overflowscrolling, pagevisibility, peerconnection, performance, placeholder, pointerevents, pointerlock, postmessage, preserve3d, progressbar, quotamanagement, regions, requestanimationframe, requestautocomplete, rgba, ruby, sandbox, scriptasync, scriptdefer, seamless, search, serviceworker, sessionstorage, shapes, sharedworkers, siblinggeneral, smil, softhyphens, softhyphensfind, speechinput, speechrecognition, speechsynthesis, srcdoc, srcset, strictmode, stylescoped, subpixelfont, supports, svg, svgasimg, svgclippaths, svgfilters, target, template, textareamaxlength, textshadow, texttrackapi, time, todataurljpeg, todataurlpng, todataurlwebp, touchevents, track, typedarrays, unicode, userdata, userselect, vibrate, video, videoautoplay, videoloop, videopreload, vml, webaudio, webgl, webglextensions, webintents, webp, webp-lossless, webpalpha, webpanimation, webplossless, websockets, websocketsbinary, websqldatabase, webworkers, wrapflow, xhr2, xhrresponsetype, xhrresponsetypearraybuffer, xhrresponsetypeblob, xhrresponsetypedocument, xhrresponsetypejson, xhrresponsetypetext";
 var testArray = tests.split(", ");
 
-describe("Customizr", function () {
+var cli = path.join(cwd, "bin", "customizr");
+var settingsPath = path.join(cwd, "test", "settings");
+
+var settings = {
+	custom: path.join(settingsPath, "custom.json"),
+	exclude: path.join(settingsPath, "exclude.json"),
+	prefixed: path.join(settingsPath, "prefixed.json"),
+	select: path.join(settingsPath, "select.json")
+};
+
+describe("customizr", function () {
 	var testsLength = testArray.length,
 		existingBuild = path.join(cwd, "build", "modernizr-custom.js");
 
 	it("should find all available tests in project", function (done) {
 		process.stdout.write("\n\n");
 
-		nexpect.spawn(path.join(cwd, "bin", "customizr"), [], {
+		nexpect.spawn(cli, [
+			"--config", settings.custom
+		], {
 			stripColors: true,
 			verbose: true
 		})
@@ -49,7 +61,9 @@ describe("Customizr", function () {
 	it("should avoid re-building a cached Modernizr build", function (done) {
 		process.stdout.write("\n\n");
 
-		nexpect.spawn(path.join(cwd, "bin", "customizr"), [], {
+		nexpect.spawn(cli, [
+			"--config", settings.custom
+		], {
 			stripColors: true,
 			verbose: true
 		})
@@ -76,7 +90,10 @@ describe("Customizr", function () {
 	it("should force re-building a cached Modernizr build", function (done) {
 		process.stdout.write("\n\n");
 
-		nexpect.spawn(path.join(cwd, "bin", "customizr"), ["--force"], {
+		nexpect.spawn(cli, [
+			"--config", settings.custom,
+			"--force"
+		], {
 			stripColors: true,
 			verbose: true
 		})
@@ -120,7 +137,9 @@ describe("custom builds", function () {
 		it("should only build declared tests", function (done) {
 			process.stdout.write("\n\n");
 
-			nexpect.spawn(path.join(cwd, "bin", "customizr"), ["--config", path.join(cwd, "test", "settings", "select.json")], {
+			nexpect.spawn(cli, [
+				"--config", settings.select
+			], {
 				stripColors: true,
 				verbose: true
 			})
@@ -183,7 +202,9 @@ describe("custom builds", function () {
 		it("should build without excluded tests", function (done) {
 			process.stdout.write("\n\n");
 
-			nexpect.spawn(path.join(cwd, "bin", "customizr"), ["--config", path.join(cwd, "test", "settings", "exclude.json")], {
+			nexpect.spawn(cli, [
+				"--config", settings.exclude
+			], {
 				stripColors: true,
 				verbose: true
 			})
@@ -228,7 +249,9 @@ describe("custom builds", function () {
 		it("should honor the specified prefix", function (done) {
 			process.stdout.write("\n\n");
 
-			nexpect.spawn(path.join(cwd, "bin", "customizr"), ["--config", path.join(cwd, "test", "settings", "prefixed.json")], {
+			nexpect.spawn(cli, [
+				"--config", settings.prefixed
+			], {
 				stripColors: true,
 				verbose: true
 			})

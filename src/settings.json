@@ -1,7 +1,7 @@
 {
 	"defaults": {
 		"devFile" : false,
-		"dest" : "build/modernizr-custom.js",
+		"dest" : false,
 		"options" : [
 			"setClasses",
 			"addTest",
