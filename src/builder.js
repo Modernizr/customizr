@@ -99,18 +99,28 @@ module.exports = function (modernizrPath) {
 
 			var modernizr = require("modernizr");
 
-			modernizr.build(modernizrOptions, {
-				min: minify,
-				verbose: (_verbose || false),
-				callback: function (result) {
-					utils.log.ok();
-					clearInterval(_interval);
+			// TODO: SWITCH TO NEW API:
+			//
+			// modernizr.build(modernizrOptions, {
+				// min: minify,
+				// verbose: (_verbose || false),
+				// callback: function () {}
+			// });
+			//
+			// REMEMBER TO UPDATE TEMPORARY REPO PATH:
+			// https://github.com/robwierzbowski/Modernizr/tarball/rw/new-build-sys
 
-					// Write code to file
+			modernizr.build(modernizrOptions, function (result) {
+				utils.log.ok();
+				clearInterval(_interval);
+
+				// Write code to file
+				if (settings.dest) {
 					this.builder.writeCodeToFile(result, settings);
-					return deferred.resolve(modernizrOptions);
-				}.bind(this)
-			});
+				}
+
+				return deferred.resolve(modernizrOptions);
+			}.bind(this));
 
 			return deferred.promise;
 		}
