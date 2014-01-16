@@ -119,7 +119,10 @@ module.exports = function (modernizrPath) {
 					this.builder.writeCodeToFile(result, settings);
 				}
 
-				return deferred.resolve(modernizrOptions);
+				return deferred.resolve({
+					result: result,
+					options: modernizrOptions
+				});
 			}.bind(this));
 
 			return deferred.promise;
