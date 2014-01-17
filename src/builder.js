@@ -70,10 +70,14 @@ module.exports = function (modernizrPath) {
 					utils.log.ok(("Your current file can be found in " + settings.dest).grey);
 				}
 
-				return deferred.resolve({
-					result: useCachedVersion,
-					options: modernizrOptions
+				setTimeout(function () {
+					return deferred.resolve({
+						result: useCachedVersion,
+						options: modernizrOptions
+					});
 				});
+
+				return deferred.promise;
 			}
 
 			// Set verbosity
