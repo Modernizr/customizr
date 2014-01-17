@@ -90,8 +90,8 @@ module.exports = function (modernizrPath) {
 				return mkdirp.sync(path.dirname(filepath));
 			},
 
-			read : function () {
-
+			read : function (filepath) {
+				return fs.readFileSync(filepath);
 			},
 
 			readJSON : function (filepath) {
@@ -155,7 +155,7 @@ module.exports = function (modernizrPath) {
 				previous.modernizr === pkg.dependencies.modernizr &&
 				equal(previous.options, modernizrOptions)
 			) {
-				return true;
+				return this.file.read(currentConfig.dest);
 			}
 
 			return false;

@@ -71,7 +71,7 @@ module.exports = function (modernizrPath) {
 				}
 
 				return deferred.resolve({
-					result: null,
+					result: useCachedVersion,
 					options: modernizrOptions
 				});
 			}
