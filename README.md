@@ -91,7 +91,7 @@ A sample config file is below:
 ###### **`devFile`** (String, optional)
 Path to the local build file you're using for development. This parameter is needed so `customizr` can skip your dev file when traversing your project to avoid triggering false positives. If you're using a remote file for development, set this option to `remote`.
 
-This is an optional parameter. If you do not have a local devFile, set this option to `false`. Do note that if this parameter is false and you have a locoal development file, it will include any reference it finds and will defeat the purpose of this tool.
+This is an optional parameter. If you do not have a local devFile, set this option to `false`. Note that if this parameter is false and you have a local development file, it will find all Modernizr references from this file and will defeat the purpose of this tool.
 
 ###### **`dest`** (String, optional)
 Path to save the customized Modernizr build. It defaults to `lib/modernizr-custom.js`.
