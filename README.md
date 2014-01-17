@@ -49,6 +49,9 @@ A sample config file is below:
 
 ```javascript
 {
+	// Avoid unnecessary builds (see Caching section below)
+	"cache" : true,
+
 	// Path to the build you're using for development.
 	"devFile" : "lib/modernizr-dev.js",
 
@@ -94,6 +97,8 @@ A sample config file is below:
 }
 ```
 
+###### **`cache`** (Boolean, optional)
+When true, `customizr` will avoid the expensive build process if a certain criteria is met (see [Caching](#caching) section below)
 
 ###### **`devFile`** (String, optional)
 Path to the local build file you're using for development. This parameter is needed so `customizr` can skip your dev file when traversing your project to avoid triggering false positives. If you're using a remote file for development, set this option to `remote`.
@@ -146,6 +151,23 @@ Have custom Modernizr tests? Add paths to their location here. The object suppor
 
 This is an optional parameter.
 
+## Caching
+
+For large projects, building a custom Modernizr file can be an expensive task. `customizr` does its best to avoid unnecessary builds by following a set criteria. When all of the following are met, it assumes that no changes are necessary:
+
+- If `customizr` has been previously run *AND*
+- If [`settings.cache`](#cache-boolean-optional) is true *AND*
+- If [`settings.dest`](#dest-string-optional) exists and is identical to the previous build *AND*
+- If the `customizr` version is identical to the previous build *AND*
+- If the `modernizr` dependency is identical to the previous build *AND*
+- If the current [`customizr` settings](#config-file) are identical to the previous build *THEN*
+
+`customizr` returns the cached data found in [`settings.dest`](#dest-string-optional)
+
+- If any of the preceding rules are falsy, the cache is invalidated.
+- If [`settings.cache`](#cache-boolean-optional) is falsy, the cache is invalidated.
+- If [`settings.dest`](#dest-string-optional) is not defined, the cache is invalidated.
+
 ## Programmatic API
 
 ### require("customizr")(settings, callback)
@@ -159,6 +181,7 @@ You can use `customizr` directly in your app if you prefer to not rely on the bi
 var modernizr = require("customizr");
 
 var settings = {
+	"cache" : true,
 	"devFile" : false,
 	"dest" : false,
 	"options" : [

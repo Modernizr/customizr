@@ -147,6 +147,7 @@ module.exports = function (modernizrPath) {
 			var previous = this.getPreviousOptions();
 
 			if (
+				currentConfig.cache === true &&
 				(currentConfig.dest && this.file.exists(currentConfig.dest)) &&
 				pkg &&
 				previous &&

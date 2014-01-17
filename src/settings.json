@@ -1,5 +1,6 @@
 {
 	"defaults": {
+		"cache" : true,
 		"devFile" : false,
 		"dest" : false,
 		"options" : [
