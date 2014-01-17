@@ -45,7 +45,7 @@ Install with npm: `npm install --save customizr`
 
 #### Config File
 
-A sample config file is below:
+A sample config file is below. Default values shown:
 
 ```javascript
 {
@@ -53,17 +53,16 @@ A sample config file is below:
 	"cache" : true,
 
 	// Path to the build you're using for development.
-	"devFile" : "lib/modernizr-dev.js",
+	"devFile" : false,
 
 	// Path to save out the built file
-	"dest" : "build/modernizr-custom.js",
+	"dest" : false,
 
 	// Based on default settings on http://modernizr.com/download/
 	"options" : [
 		"setClasses",
 		"addTest",
 		"html5printshiv",
-		"load",
 		"testProp",
 		"fnBind"
 	],
@@ -88,8 +87,9 @@ A sample config file is below:
 
 	// By default, this task will crawl all *.js, *.css, *.scss files.
 	"files" : [
-		"**/*.{js,css,scss}",
-		"!node_modules/**/*"
+		"*[^(g|G)runt(file)?].{js,css,scss}",
+		"**[^node_modules]/**/*.{js,css,scss}",
+		"!lib/**/*"
 	],
 
 	// Have custom Modernizr tests? Add them here.
@@ -195,6 +195,7 @@ var settings = {
 	"tests" : [],
 	"excludeTests": [],
 	"crawl" : true,
+	"useBuffers": false,
 	"files" : [
 		"*[^(g|G)runt(file)?].{js,css,scss}",
 		"**[^node_modules]/**/*.{js,css,scss}",

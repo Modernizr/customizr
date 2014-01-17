@@ -14,6 +14,7 @@
 		"tests" : [],
 		"excludeTests": [],
 		"crawl" : true,
+		"useBuffers": false,
 		"files" : [
 			"*[^(g|G)runt(file)?].{js,css,scss}",
 			"**[^node_modules]/**/*.{js,css,scss}",
