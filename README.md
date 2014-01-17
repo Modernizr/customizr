@@ -75,6 +75,9 @@ A sample config file is below:
 	// By default, will crawl your project for references to Modernizr tests
 	// Set to false to disable
 	"crawl" : true,
+	
+	// Set to true to pass in buffers via the "files" parameter below
+	"useBuffers" : false,
 
 	// By default, this task will crawl all *.js, *.css, *.scss files.
 	"files" : [
@@ -123,11 +126,14 @@ By default, this task will crawl your project for references to Modernizr tests.
 
 This is an optional parameter.
 
+###### **`useBuffers`** (Boolean, optional)
+When `true`, the `files` parameter will accept an array of buffers in lieu of lookup strings.
+
 ###### **`files`** (Array, optional)
 When `crawl` = `true`, this task will crawl all `*.js`, `*.css`, `*.scss` files. You can override this by defining a custom `files` array. The object supports either:
 
 - An array of all [minimatch](https://github.com/isaacs/minimatch) options
-- An array of [Vinyl-style](https://github.com/wearefractal/vinyl) File buffers
+- An array of [Vinyl-style](https://github.com/wearefractal/vinyl) File buffers. `useBuffers` must be `true` to enable this functionality.
 
 This is an optional parameter.
 
