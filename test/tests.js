@@ -18,6 +18,7 @@ var cli = path.join(cwd, "bin", "customizr");
 var settingsPath = path.join(cwd, "test", "settings");
 
 var settings = {
+	cache: path.join(settingsPath, "cache-invalidate.json"),
 	custom: path.join(settingsPath, "custom.json"),
 	exclude: path.join(settingsPath, "exclude.json"),
 	prefixed: path.join(settingsPath, "prefixed.json"),
@@ -93,6 +94,36 @@ describe("customizr", function () {
 		nexpect.spawn(cli, [
 			"--config", settings.custom,
 			"--force"
+		], {
+			stripColors: true,
+			verbose: true
+		})
+		.wait("Looking for Modernizr references")
+
+		.wait(">> " + testsLength + " matches in")
+		.expect(">> " + tests)
+
+		.expect(">> " + testsLength + " matches in")
+		.expect(">> " + tests)
+
+		.expect(">> " + testsLength + " matches in")
+		.expect(">> " + tests)
+
+		.expect(">> Ready to build using these settings:")
+
+		.wait("Building your customized Modernizr").wait("OK")
+		.expect(">> Success! Saved file to build/modernizr-custom.js")
+
+		.run(function () {
+			done();
+		});
+	});
+
+	it("should invalidate a cached Modernizr build", function (done) {
+		process.stdout.write("\n\n");
+
+		nexpect.spawn(cli, [
+			"--config", settings.cache
 		], {
 			stripColors: true,
 			verbose: true
