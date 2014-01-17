@@ -91,7 +91,7 @@ module.exports = function (modernizrPath) {
 			},
 
 			read : function (filepath) {
-				return fs.readFileSync(filepath);
+				return String(fs.readFileSync(filepath));
 			},
 
 			readJSON : function (filepath) {
