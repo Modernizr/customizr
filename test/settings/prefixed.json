@@ -2,7 +2,9 @@
 	"cssprefix": "prefixed-",
 	"dest": "build/modernizr-prefixed.js",
 	"uglify": false,
-	"files": [
-		"test/css/*.css"
-	]
+	"files": {
+		"src": [
+			"test/css/*.css"
+		]
+	}
 }
