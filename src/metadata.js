@@ -1,5 +1,5 @@
 /* jshint node: true */
-module.exports = function (modernizrPath) {
+module.exports = function () {
 	"use strict";
 
 	// Dependencies
@@ -12,28 +12,24 @@ module.exports = function (modernizrPath) {
 
 	return {
 		init : function () {
-			var deferred = new promise.Deferred();
-			var modernizr = require("modernizr");
+			var deferred = new promise.Deferred(),
+				modernizr = require("modernizr");
 
-			// module.exports ftw?
-			(function () {
-				var mappings = modernizr.metadata;
-				var modRegExp = new RegExp(modernizrPath + "/?");
-
-				mappings = mappings.map(function (map) {
-					var cleanname = map.name.replace(modRegExp, ""),
-						testpath = map.amdPath.replace(modRegExp, "").replace("feature-detects", "test");
+			modernizr.metadata(function (data) {
+				data = JSON.parse(data).map(function (map) {
+					var testpath = map.amdPath.replace("test/", "");
+					testpath = testpath.replace(".js", "");
 
 					return {
-						"path": testpath.replace(".js", ""),
-						"name": cleanname,
+						"path": testpath,
+						"name": map.name,
 						"property": map.property,
 						"cssclass": map.cssclass
 					};
 				});
 
-				return deferred.resolve(mappings);
-			}());
+				return deferred.resolve(data);
+			});
 
 			return deferred.promise;
 		}
