@@ -1,5 +1,5 @@
 /* jshint node: true */
-module.exports = function (modernizrPath) {
+module.exports = function () {
 	"use strict";
 
 	var argv = require("optimist").argv;
@@ -24,10 +24,8 @@ module.exports = function (modernizrPath) {
 
 	return {
 		writeCodeToFile : function (result, config) {
-			var code = config.uglify ? result.min : result.code;
-
 			utils.log.ok(("Success! Saved file to " + config.dest).grey);
-			return utils.file.write(config.dest, code);
+			return utils.file.write(config.dest, result);
 		},
 
 		init : function (tests) {
@@ -93,29 +91,14 @@ module.exports = function (modernizrPath) {
 			}
 
 			utils.log.writeln();
-			utils.log.write("Building your customized Modernizr".bold.white);
-
-			if (!_verbose) {
-				_interval = setInterval(function () {
-					utils.log.write(".".grey);
-				}.bind(this), 200);
-			}
+			utils.log.ok("Building your customized Modernizr".bold.white);
 
 			var modernizr = require("modernizr");
 
-			// TODO: SWITCH TO NEW API:
-			//
-			// modernizr.build(modernizrOptions, {
-				// min: minify,
-				// verbose: (_verbose || false),
-				// callback: function () {}
-			// });
-			//
-			// REMEMBER TO UPDATE TEMPORARY REPO PATH:
-			// https://github.com/robwierzbowski/Modernizr/tarball/rw/new-build-sys
-
-			modernizr.build(modernizrOptions, function (result) {
-				utils.log.ok();
+			modernizr.build(modernizrOptions, {
+				min: minify,
+				verbose: true,
+			}, function (result) {
 				clearInterval(_interval);
 
 				// Write code to file
@@ -124,7 +107,7 @@ module.exports = function (modernizrPath) {
 				}
 
 				return deferred.resolve({
-					result: (settings.uglify ? result.min : result.code),
+					result: result,
 					options: modernizrOptions
 				});
 			}.bind(this));
