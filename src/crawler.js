@@ -236,10 +236,9 @@ module.exports = function (modernizrPath) {
 				utils.log.subhead("Looking for Modernizr references");
 			}
 
-
 			// Support including code via string rather than reading a file.
 			if (settings.useBuffers === true) {
-				this.crawler.parseCodeFromBuffers(settings.files, metadata);
+				this.crawler.parseCodeFromBuffers(settings.files.src, metadata);
 
 				for (var key in this.crawler.stringMatches) {
 					tests.push(key);
@@ -267,21 +266,21 @@ module.exports = function (modernizrPath) {
 						""
 					].join("\n       ").replace(/\s$/, ""));
 				} else {
-					settings.files.push("!" + settings.devFile);
+					settings.files.src.push("!" + settings.devFile);
 				}
 			}
 
 			// Exclude generated file
 			if (settings.dest) {
-				settings.files.push("!" + settings.dest);
+				settings.files.src.push("!" + settings.dest);
 			}
 
 			// And exclude all files in this current directory
-			settings.files.push("!" + path.join(__dirname.replace(cwd + path.sep, ""), "**", "*"));
+			settings.files.src.push("!" + path.join(__dirname.replace(cwd + path.sep, ""), "**", "*"));
 
 			files = utils.file.expand({
 				filter: "isFile"
-			}, settings.files);
+			}, settings.files.src);
 
 			this.crawler.readFilesAsync(files, metadata).then(function () {
 				for (var key in this.crawler.stringMatches) {

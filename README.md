@@ -86,11 +86,13 @@ A sample config file is below. Default values shown:
 	"useBuffers" : false,
 
 	// By default, this task will crawl all *.js, *.css, *.scss files.
-	"files" : [
-		"*[^(g|G)runt(file)?].{js,css,scss}",
-		"**[^node_modules]/**/*.{js,css,scss}",
-		"!lib/**/*"
-	],
+	"files" : {
+		"src": [
+			"*[^(g|G)runt(file)?].{js,css,scss}",
+			"**[^node_modules]/**/*.{js,css,scss}",
+			"!lib/**/*"
+		]
+	},
 
 	// Have custom Modernizr tests? Add them here.
 	"customTests" : []
@@ -138,8 +140,8 @@ This is an optional parameter.
 ###### **`useBuffers`** (Boolean, optional)
 When `true`, the `files` parameter will accept an array of buffers in lieu of lookup strings.
 
-###### **`files`** (Array, optional)
-When `crawl` = `true`, this task will crawl all `*.js`, `*.css`, `*.scss` files. You can override this by defining a custom `files` array. The object supports either:
+###### **`files.src`** (Array, optional)
+When `crawl` = `true`, this task will crawl all `*.js`, `*.css`, `*.scss` files. You can override this by defining a custom `files.src` array. The object supports either:
 
 - An array of all [minimatch](https://github.com/isaacs/minimatch) options
 - An array of [Vinyl-style](https://github.com/wearefractal/vinyl) File buffers. `useBuffers` must be `true` to enable this functionality.
@@ -196,11 +198,13 @@ var settings = {
 	"excludeTests": [],
 	"crawl" : true,
 	"useBuffers": false,
-	"files" : [
-		"*[^(g|G)runt(file)?].{js,css,scss}",
-		"**[^node_modules]/**/*.{js,css,scss}",
-		"!lib/**/*"
-	],
+	"files" : {
+		"src": [
+			"*[^(g|G)runt(file)?].{js,css,scss}",
+			"**[^node_modules]/**/*.{js,css,scss}",
+			"!lib/**/*"
+		]
+	},
 	"customTests" : []
 };
 
