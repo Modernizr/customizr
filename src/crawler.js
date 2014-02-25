@@ -147,6 +147,11 @@ module.exports = function (modernizrPath) {
 		},
 
 		parseCodeFromBuffers : function (buffers, metadata) {
+			if (typeof buffers === "undefined") {
+				utils.log.warn("Could not find any files to parse.");
+				throw new Error("No buffers found.");
+			}
+
 			var i, j, file;
 
 			for (i = 0, j = buffers.length; i < j; i++) {
