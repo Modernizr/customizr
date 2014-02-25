@@ -63,6 +63,7 @@ A sample config file is below. Default values shown:
 		"setClasses",
 		"addTest",
 		"html5printshiv",
+		"load",
 		"testProp",
 		"fnBind"
 	],
@@ -190,6 +191,7 @@ var settings = {
 		"setClasses",
 		"addTest",
 		"html5printshiv",
+		"load",
 		"testProp",
 		"fnBind"
 	],
