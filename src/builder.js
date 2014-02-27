@@ -102,7 +102,7 @@ module.exports = function () {
 				clearInterval(_interval);
 
 				// Write code to file
-				if (settings.dest) {
+				if (settings.dest && settings.useBuffers !== true) {
 					this.builder.writeCodeToFile(result, settings);
 				}
 
