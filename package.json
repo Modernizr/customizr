@@ -7,8 +7,8 @@
     "customizr": "bin/customizr"
   },
   "scripts": {
-    "test": "rm -fr build; node test/generate-tests.js; node test/runner.js",
-    "postinstall": "if [[ -d node_modules/modernizr ]]; then ( cd node_modules/modernizr; npm install --production; cd -; ); fi"
+    "test": "node test.js",
+    "postinstall": "node postinstall.js"
   },
   "repository": {
     "type": "git",
