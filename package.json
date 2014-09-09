@@ -7,8 +7,8 @@
     "customizr": "bin/customizr"
   },
   "scripts": {
-    "test": "rm -fr build; node test/generate-tests.js; node test/runner.js",
-    "postinstall": "if [[ -d node_modules/modernizr ]]; then ( cd node_modules/modernizr; npm install --production; cd -; ); fi"
+    "test": "node test.js",
+    "postinstall": "node postinstall.js"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/doctyper/customizr",
   "dependencies": {
-    "modernizr": "https://github.com/Modernizr/Modernizr/tarball/master",
+    "modernizr": "https://github.com/backflip/Modernizr/tarball/master",
     "deep-equal": "~0.1.2",
     "colors": "~0.6.2",
     "underscore": "~1.5.2",
