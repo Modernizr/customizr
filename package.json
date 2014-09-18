@@ -7,8 +7,9 @@
     "customizr": "bin/customizr"
   },
   "scripts": {
-    "test": "rm -fr build; node test/generate-tests.js; node test/runner.js",
-    "postinstall": "if [[ -d node_modules/modernizr ]]; then ( cd node_modules/modernizr; npm install --production; cd -; ); fi"
+    "pretest": "node test/pretest.js",
+    "test": "node test/runner.js",
+    "postinstall": "node scripts/postinstall.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "modernizr": "https://github.com/Modernizr/Modernizr/tarball/master",
     "deep-equal": "~0.1.2",
     "colors": "~0.6.2",
+    "grunt-legacy-log": "~0.1.1",
     "underscore": "~1.5.2",
     "mkdirp": "~0.3.5",
     "promised-io": "~0.3.4",
@@ -36,8 +38,9 @@
     "nopt": "~2.1.2"
   },
   "devDependencies": {
+    "expect.js": "~0.2.0",
+    "fs-extra": "^0.11.1",
     "mocha": "~1.14.0",
-    "nexpect": "~0.2.4",
-    "expect.js": "~0.2.0"
+    "nexpect": "~0.2.4"
   }
 }

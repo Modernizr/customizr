@@ -1,8 +1,16 @@
 "use strict";
 
-var fs = require("fs");
+var fs = require("fs-extra");
 var cwd = process.cwd();
 var path = require("path");
+
+var buildDir = path.join(cwd, "build");
+
+if (fs.existsSync(buildDir)) {
+	console.log("Removing old build folder...");
+	fs.removeSync(buildDir);
+	console.log("Done.");
+}
 
 var metadata = require("modernizr").metadata;
 
