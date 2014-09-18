@@ -7,8 +7,7 @@
     "customizr": "bin/customizr"
   },
   "scripts": {
-    "test": "rm -fr build; node test/generate-tests.js; node test/runner.js",
-    "postinstall": "if [[ -d node_modules/modernizr ]]; then ( cd node_modules/modernizr; npm install --production; cd -; ); fi"
+    "test": "rm -fr build; node test/generate-tests.js; node test/runner.js"
   },
   "repository": {
     "type": "git",
@@ -39,5 +38,8 @@
     "mocha": "~1.14.0",
     "nexpect": "~0.2.4",
     "expect.js": "~0.2.0"
+  },
+  "peerDependencies": {
+    "modernizr": "https://github.com/robwierzbowski/Modernizr/tarball/rw/new-build-sys"
   }
 }
