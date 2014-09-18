@@ -24,7 +24,6 @@
   },
   "homepage": "https://github.com/doctyper/customizr",
   "dependencies": {
-    "modernizr": "https://github.com/Modernizr/Modernizr/tarball/master",
     "deep-equal": "~0.1.2",
     "colors": "~0.6.2",
     "underscore": "~1.5.2",
@@ -40,6 +39,6 @@
     "expect.js": "~0.2.0"
   },
   "peerDependencies": {
-    "modernizr": "https://github.com/robwierzbowski/Modernizr/tarball/rw/new-build-sys"
+    "modernizr": "https://github.com/Modernizr/Modernizr/tarball/master"
   }
 }
