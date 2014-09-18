@@ -4,6 +4,7 @@ var Modernizr = window.Modernizr;
 
 var tests = {
 	"standalone": {
+		"ambientlight": Modernizr.ambientlight,
 		"applicationcache": Modernizr.applicationcache,
 		"audio": Modernizr.audio,
 		"battery": Modernizr.batteryapi,
@@ -16,23 +17,28 @@ var tests = {
 		"cookies": Modernizr.cookies,
 		"cors": Modernizr.cors,
 		"custom-protocol-handler": Modernizr.customprotocolhandler,
+		"customevent": Modernizr.customevent,
 		"dart": Modernizr.dart,
 		"dataview-api": Modernizr.dataview,
 		"draganddrop": Modernizr.draganddrop,
 		"emoji": Modernizr.emoji,
+		"eventlistener": Modernizr.eventlistener,
 		"exif-orientation": Modernizr.exiforientation,
 		"flash": Modernizr.flash,
 		"fullscreen-api": Modernizr.fullscreen,
 		"gamepad": Modernizr.gamepads,
 		"geolocation": Modernizr.geolocation,
 		"hashchange": Modernizr.hashchange,
+		"hiddenscroll": Modernizr.hiddenscroll,
 		"history": Modernizr.history,
+		"htmlimports": Modernizr.htmlimports,
 		"ie8compat": Modernizr.ie8compat,
-		"indexedDB": Modernizr.indexeddb,
+		"indexeddb": Modernizr.indexeddb,
+		"indexeddbblob": Modernizr.indexeddbblob,
 		"input": Modernizr.input,
 		"inputsearchevent": Modernizr.search,
 		"inputtypes": Modernizr.inputtypes,
-		"intl": Modernizr.Intl,
+		"intl": Modernizr.intl,
 		"json": Modernizr.json,
 		"lists-reversed": Modernizr.olreversed,
 		"mathml": Modernizr.mathml,
@@ -42,6 +48,7 @@ var tests = {
 		"pointerevents": Modernizr.pointerevents,
 		"pointerlock-api": Modernizr.pointerlock,
 		"postmessage": Modernizr.postmessage,
+		"queryselector": Modernizr.queryselector,
 		"quota-management-api": Modernizr.quotamanagement,
 		"requestanimationframe": Modernizr.requestanimationframe,
 		"serviceworker": Modernizr.serviceworker,
@@ -71,17 +78,25 @@ var tests = {
 		"lowbattery": Modernizr.lowbattery
 	},
 	"canvas": {
+		"blending": [
+			Modernizr["canvasblending"]
+		],
 		"todataurl": [
 			Modernizr["todataurljpeg"],
 			Modernizr["todataurlpng"],
 			Modernizr["todataurlwebp"]
+		],
+		"winding": [
+			Modernizr["canvaswinding"]
 		]
 	},
 	"crypto": {
 		"getrandomvalues": Modernizr.getrandomvalues
 	},
 	"css": {
+		"all": Modernizr.cssall,
 		"animations": Modernizr.cssanimations,
+		"backgroundblendmode": Modernizr.backgroundblendmode,
 		"backgroundcliptext": Modernizr.backgroundcliptext,
 		"backgroundposition-shorthand": Modernizr.bgpositionshorthand,
 		"backgroundposition-xy": Modernizr.bgpositionxy,
@@ -97,12 +112,14 @@ var tests = {
 		"boxsizing": Modernizr.boxsizing,
 		"calc": Modernizr.csscalc,
 		"checked": Modernizr.checked,
+		"chunit": Modernizr.csschunit,
 		"columns": Modernizr.csscolumns,
 		"cubicbezierrange": Modernizr.cubicbezierrange,
 		"displayrunin": Modernizr["display-runin"],
 		"displaytable": Modernizr.displaytable,
 		"ellipsis": Modernizr.ellipsis,
 		"escape": Modernizr.cssescape,
+		"exunit": Modernizr.cssexunit,
 		"filters": Modernizr.cssfilters,
 		"flexbox": Modernizr.flexbox,
 		"flexboxlegacy": Modernizr.flexboxlegacy,
@@ -150,6 +167,7 @@ var tests = {
 		"vmaxunit": Modernizr.cssvmaxunit,
 		"vminunit": Modernizr.cssvminunit,
 		"vwunit": Modernizr.cssvwunit,
+		"will-change": Modernizr.willchange,
 		"wrapflow": Modernizr.wrapflow
 	},
 	"dom": {
@@ -160,12 +178,15 @@ var tests = {
 		],
 		"dataset": Modernizr.dataset,
 		"documentfragment": Modernizr.documentfragment,
-		"microdata": Modernizr.microdata
+		"hidden": Modernizr.hidden,
+		"microdata": Modernizr.microdata,
+		"mutationObserver": Modernizr.mutationobserver
 	},
 	"elem": {
 		"datalist": Modernizr.datalistelem,
 		"details": Modernizr.details,
 		"output": Modernizr.outputelem,
+		"picture": Modernizr.picture,
 		"progress-meter": [
 			Modernizr["progressbar"],
 			Modernizr["meter"]
@@ -176,19 +197,29 @@ var tests = {
 		"track": [
 			Modernizr["texttrackapi"],
 			Modernizr["track"]
-		]
+		],
+		"unknown": Modernizr.unknownelements
 	},
 	"es5": {
 		"array": Modernizr.es5array,
 		"date": Modernizr.es5date,
 		"function": Modernizr.es5function,
 		"object": Modernizr.es5object,
+		"specification": Modernizr.es5,
 		"strictmode": Modernizr.strictmode,
-		"string": Modernizr.es5string
+		"string": Modernizr.es5string,
+		"syntax": Modernizr.es5syntax,
+		"undefined": Modernizr.es5undefined
 	},
 	"es6": {
+		"array": Modernizr.es6array,
 		"contains": Modernizr.contains,
-		"promises": Modernizr.promises
+		"generators": Modernizr.generators,
+		"math": Modernizr.es6math,
+		"number": Modernizr.es6number,
+		"object": Modernizr.es6object,
+		"promises": Modernizr.promises,
+		"string": Modernizr.es6string
 	},
 	"event": {
 		"deviceorientation-motion": [
@@ -209,7 +240,6 @@ var tests = {
 		"inputnumber-l10n": Modernizr.localizednumber,
 		"placeholder": Modernizr.placeholder,
 		"requestautocomplete": Modernizr.requestautocomplete,
-		"speechinput": Modernizr.speechinput,
 		"validation": Modernizr.formvalidation
 	},
 	"iframe": {
@@ -220,6 +250,7 @@ var tests = {
 	"img": {
 		"apng": Modernizr.apng,
 		"jpegxr": Modernizr.jpegxr,
+		"sizes": Modernizr.sizes,
 		"srcset": Modernizr.srcset,
 		"webp-alpha": Modernizr.webpalpha,
 		"webp-animation": Modernizr.webpanimation,
@@ -231,9 +262,12 @@ var tests = {
 	},
 	"input": {
 		"formaction": Modernizr.inputformaction,
-		"formenctype": Modernizr.inputformenctype
+		"formenctype": Modernizr.inputformenctype,
+		"formmethod": Modernizr.inputformmethod,
+		"formtarget": Modernizr.inputformtarget
 	},
 	"network": {
+		"beacon": Modernizr.beacon,
 		"connection": Modernizr.lowbandwidth,
 		"eventsource": Modernizr.eventsource,
 		"xhr-responsetype-arraybuffer": Modernizr.xhrresponsetypearraybuffer,
@@ -264,6 +298,7 @@ var tests = {
 		"asimg": Modernizr.svgasimg,
 		"clippaths": Modernizr.svgclippaths,
 		"filters": Modernizr.svgfilters,
+		"foreignobject": Modernizr.svgforeignobject,
 		"inline": Modernizr.inlinesvg,
 		"smil": Modernizr.smil
 	},
@@ -271,7 +306,9 @@ var tests = {
 		"maxlength": Modernizr.textareamaxlength
 	},
 	"url": {
-		"data-uri": Modernizr.datauri
+		"bloburls": Modernizr.bloburls,
+		"data-uri": Modernizr.datauri,
+		"parser": Modernizr.urlparser
 	},
 	"video": {
 		"autoplay": Modernizr.videoautoplay,
@@ -295,6 +332,7 @@ var tests = {
 		"blobworkers": Modernizr.blobworkers,
 		"dataworkers": Modernizr.dataworkers,
 		"sharedworkers": Modernizr.sharedworkers,
+		"transferables": Modernizr.transferables,
 		"webworkers": Modernizr.webworkers
 	}
 };

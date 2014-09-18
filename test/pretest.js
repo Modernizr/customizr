@@ -7,7 +7,9 @@ var path = require("path");
 var buildDir = path.join(cwd, "build");
 
 if (fs.existsSync(buildDir)) {
+	console.log("Removing old build folder...");
 	fs.removeSync(buildDir);
+	console.log("Done.");
 }
 
 var metadata = require("modernizr").metadata;

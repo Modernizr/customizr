@@ -5,6 +5,7 @@ define(["Modernizr"], function (M) {
 
 	var tests = {
 		"standalone": {
+			"ambientlight": M.ambientlight,
 			"applicationcache": M.applicationcache,
 			"audio": M.audio,
 			"battery": M.batteryapi,
@@ -17,23 +18,28 @@ define(["Modernizr"], function (M) {
 			"cookies": M.cookies,
 			"cors": M.cors,
 			"custom-protocol-handler": M.customprotocolhandler,
+			"customevent": M.customevent,
 			"dart": M.dart,
 			"dataview-api": M.dataview,
 			"draganddrop": M.draganddrop,
 			"emoji": M.emoji,
+			"eventlistener": M.eventlistener,
 			"exif-orientation": M.exiforientation,
 			"flash": M.flash,
 			"fullscreen-api": M.fullscreen,
 			"gamepad": M.gamepads,
 			"geolocation": M.geolocation,
 			"hashchange": M.hashchange,
+			"hiddenscroll": M.hiddenscroll,
 			"history": M.history,
+			"htmlimports": M.htmlimports,
 			"ie8compat": M.ie8compat,
-			"indexedDB": M.indexeddb,
+			"indexeddb": M.indexeddb,
+			"indexeddbblob": M.indexeddbblob,
 			"input": M.input,
 			"inputsearchevent": M.search,
 			"inputtypes": M.inputtypes,
-			"intl": M.Intl,
+			"intl": M.intl,
 			"json": M.json,
 			"lists-reversed": M.olreversed,
 			"mathml": M.mathml,
@@ -43,6 +49,7 @@ define(["Modernizr"], function (M) {
 			"pointerevents": M.pointerevents,
 			"pointerlock-api": M.pointerlock,
 			"postmessage": M.postmessage,
+			"queryselector": M.queryselector,
 			"quota-management-api": M.quotamanagement,
 			"requestanimationframe": M.requestanimationframe,
 			"serviceworker": M.serviceworker,
@@ -72,17 +79,25 @@ define(["Modernizr"], function (M) {
 			"lowbattery": M.lowbattery
 		},
 		"canvas": {
+			"blending": [
+				M["canvasblending"]
+			],
 			"todataurl": [
 				M["todataurljpeg"],
 				M["todataurlpng"],
 				M["todataurlwebp"]
+			],
+			"winding": [
+				M["canvaswinding"]
 			]
 		},
 		"crypto": {
 			"getrandomvalues": M.getrandomvalues
 		},
 		"css": {
+			"all": M.cssall,
 			"animations": M.cssanimations,
+			"backgroundblendmode": M.backgroundblendmode,
 			"backgroundcliptext": M.backgroundcliptext,
 			"backgroundposition-shorthand": M.bgpositionshorthand,
 			"backgroundposition-xy": M.bgpositionxy,
@@ -98,12 +113,14 @@ define(["Modernizr"], function (M) {
 			"boxsizing": M.boxsizing,
 			"calc": M.csscalc,
 			"checked": M.checked,
+			"chunit": M.csschunit,
 			"columns": M.csscolumns,
 			"cubicbezierrange": M.cubicbezierrange,
 			"displayrunin": M["display-runin"],
 			"displaytable": M.displaytable,
 			"ellipsis": M.ellipsis,
 			"escape": M.cssescape,
+			"exunit": M.cssexunit,
 			"filters": M.cssfilters,
 			"flexbox": M.flexbox,
 			"flexboxlegacy": M.flexboxlegacy,
@@ -151,6 +168,7 @@ define(["Modernizr"], function (M) {
 			"vmaxunit": M.cssvmaxunit,
 			"vminunit": M.cssvminunit,
 			"vwunit": M.cssvwunit,
+			"will-change": M.willchange,
 			"wrapflow": M.wrapflow
 		},
 		"dom": {
@@ -161,12 +179,15 @@ define(["Modernizr"], function (M) {
 			],
 			"dataset": M.dataset,
 			"documentfragment": M.documentfragment,
-			"microdata": M.microdata
+			"hidden": M.hidden,
+			"microdata": M.microdata,
+			"mutationObserver": M.mutationobserver
 		},
 		"elem": {
 			"datalist": M.datalistelem,
 			"details": M.details,
 			"output": M.outputelem,
+			"picture": M.picture,
 			"progress-meter": [
 				M["progressbar"],
 				M["meter"]
@@ -177,19 +198,29 @@ define(["Modernizr"], function (M) {
 			"track": [
 				M["texttrackapi"],
 				M["track"]
-			]
+			],
+			"unknown": M.unknownelements
 		},
 		"es5": {
 			"array": M.es5array,
 			"date": M.es5date,
 			"function": M.es5function,
 			"object": M.es5object,
+			"specification": M.es5,
 			"strictmode": M.strictmode,
-			"string": M.es5string
+			"string": M.es5string,
+			"syntax": M.es5syntax,
+			"undefined": M.es5undefined
 		},
 		"es6": {
+			"array": M.es6array,
 			"contains": M.contains,
-			"promises": M.promises
+			"generators": M.generators,
+			"math": M.es6math,
+			"number": M.es6number,
+			"object": M.es6object,
+			"promises": M.promises,
+			"string": M.es6string
 		},
 		"event": {
 			"deviceorientation-motion": [
@@ -210,7 +241,6 @@ define(["Modernizr"], function (M) {
 			"inputnumber-l10n": M.localizednumber,
 			"placeholder": M.placeholder,
 			"requestautocomplete": M.requestautocomplete,
-			"speechinput": M.speechinput,
 			"validation": M.formvalidation
 		},
 		"iframe": {
@@ -221,6 +251,7 @@ define(["Modernizr"], function (M) {
 		"img": {
 			"apng": M.apng,
 			"jpegxr": M.jpegxr,
+			"sizes": M.sizes,
 			"srcset": M.srcset,
 			"webp-alpha": M.webpalpha,
 			"webp-animation": M.webpanimation,
@@ -232,9 +263,12 @@ define(["Modernizr"], function (M) {
 		},
 		"input": {
 			"formaction": M.inputformaction,
-			"formenctype": M.inputformenctype
+			"formenctype": M.inputformenctype,
+			"formmethod": M.inputformmethod,
+			"formtarget": M.inputformtarget
 		},
 		"network": {
+			"beacon": M.beacon,
 			"connection": M.lowbandwidth,
 			"eventsource": M.eventsource,
 			"xhr-responsetype-arraybuffer": M.xhrresponsetypearraybuffer,
@@ -265,6 +299,7 @@ define(["Modernizr"], function (M) {
 			"asimg": M.svgasimg,
 			"clippaths": M.svgclippaths,
 			"filters": M.svgfilters,
+			"foreignobject": M.svgforeignobject,
 			"inline": M.inlinesvg,
 			"smil": M.smil
 		},
@@ -272,7 +307,9 @@ define(["Modernizr"], function (M) {
 			"maxlength": M.textareamaxlength
 		},
 		"url": {
-			"data-uri": M.datauri
+			"bloburls": M.bloburls,
+			"data-uri": M.datauri,
+			"parser": M.urlparser
 		},
 		"video": {
 			"autoplay": M.videoautoplay,
@@ -296,6 +333,7 @@ define(["Modernizr"], function (M) {
 			"blobworkers": M.blobworkers,
 			"dataworkers": M.dataworkers,
 			"sharedworkers": M.sharedworkers,
+			"transferables": M.transferables,
 			"webworkers": M.webworkers
 		}
 	};
