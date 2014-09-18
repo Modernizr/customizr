@@ -6,10 +6,12 @@ var fs   = require("fs");
 var modernizrPath = path.join(cwd, "node_modules", "modernizr");
 
 if (fs.existsSync(modernizrPath)) {
-	cp.spawn("npm", ["install", "--production"], {
+	console.log("Installing Modernizr dependencies");
+
+	var child = cp.spawn("npm", ["install", "--production"], {
 		cwd: modernizrPath,
 		stdio: "inherit"
 	});
 
-	cp.on("exit", process.exit);
+	child.on("exit", process.exit);
 }
