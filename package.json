@@ -29,6 +29,7 @@
     "modernizr": "https://github.com/Modernizr/Modernizr/tarball/master",
     "deep-equal": "~0.1.2",
     "colors": "~0.6.2",
+    "grunt-legacy-log": "~0.1.1",
     "underscore": "~1.5.2",
     "mkdirp": "~0.3.5",
     "promised-io": "~0.3.4",
