@@ -26,16 +26,17 @@
   },
   "homepage": "https://github.com/doctyper/customizr",
   "dependencies": {
-    "modernizr": "https://github.com/Modernizr/Modernizr/tarball/master",
-    "deep-equal": "~0.1.2",
     "colors": "~0.6.2",
-    "grunt-legacy-log": "~0.1.1",
-    "underscore": "~1.5.2",
-    "mkdirp": "~0.3.5",
-    "promised-io": "~0.3.4",
-    "optimist": "~0.6.0",
+    "deep-equal": "~0.1.2",
     "glob": "~3.2.8",
-    "nopt": "~2.1.2"
+    "grunt-legacy-log": "~0.1.1",
+    "mkdirp": "~0.3.5",
+    "modernizr": "https://github.com/Modernizr/Modernizr/tarball/master",
+    "nopt": "~2.1.2",
+    "optimist": "~0.6.0",
+    "promised-io": "~0.3.4",
+    "underscore": "~1.5.2",
+    "win-spawn": "^2.0.0"
   },
   "devDependencies": {
     "expect.js": "~0.2.0",
