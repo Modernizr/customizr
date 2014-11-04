@@ -1,8 +1,8 @@
 var colors = require("colors");
 var path = require("path");
-var cwd  = path.resolve(__dirname, "..");
-var cp   = require("child_process");
-var fs   = require("fs");
+var cwd = path.resolve(__dirname, "..");
+var spawn = require('win-spawn');;
+var fs = require("fs");
 
 var modernizrPath = path.join(cwd, "node_modules", "modernizr");
 
@@ -14,7 +14,7 @@ if (fs.existsSync(modernizrPath)) {
 	console.log("--------------------------------------------------------------------------------------------------------------------------------------------");
 	console.log();
 
-	var child = cp.spawn("npm", ["install", "--production"], {
+	var child = spawn("npm", ["install", "--production"], {
 		cwd: modernizrPath,
 		stdio: "inherit"
 	});
