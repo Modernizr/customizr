@@ -54,7 +54,7 @@ module.exports = function (modernizrPath) {
 			}
 			// If it's not JS, assume it's CSS (or similar, e.g.: LESS, SCSS) files
 			else {
-				prefix = settings.cssprefix || '';
+				prefix = settings.classPrefix || '';
 				// When no prefix, match usage such as: .classname --or-- .no-classname
 				// When prefix set, match usage such as: .<prefix>classname --or-- .<prefix>no-classname
 				regExp = new RegExp("(?:\\." + prefix + ")(?:no-)?(" + type + ")(?![\\w-])", "gm");

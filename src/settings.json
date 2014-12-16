@@ -3,6 +3,7 @@
 		"cache" : true,
 		"devFile" : false,
 		"dest" : false,
+		"classPrefix": "",
 		"options" : [
 			"setClasses",
 			"addTest",
