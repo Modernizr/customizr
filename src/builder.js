@@ -50,6 +50,7 @@ module.exports = function (modernizrPath) {
 				"feature-detects": tests,
 				"options": options,
 				"minify": minify,
+				"classPrefix": settings.classPrefix,
 				"dest": settings.dest
 			};
 
