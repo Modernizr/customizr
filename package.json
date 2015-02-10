@@ -31,7 +31,7 @@
     "glob": "~3.2.8",
     "grunt-legacy-log": "~0.1.1",
     "mkdirp": "~0.3.5",
-    "modernizr": "https://github.com/Modernizr/Modernizr/tarball/master",
+    "modernizr": "https://github.com/Modernizr/Modernizr/tarball/561a130",
     "nopt": "~2.1.2",
     "optimist": "~0.6.0",
     "promised-io": "~0.3.4",
