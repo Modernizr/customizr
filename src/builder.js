@@ -78,9 +78,6 @@ module.exports = function (modernizrPath) {
 				return deferred.promise;
 			}
 
-			// Set verbosity
-			// modernizrOptions.verbose = (_verbose || false);
-
 			// Echo settings
 			utils.log.writeln();
 			utils.log.ok("Ready to build using these settings:");
@@ -102,7 +99,9 @@ module.exports = function (modernizrPath) {
 			var modernizr = require("modernizr");
 
 			modernizr.build(modernizrOptions, function (result) {
+				utils.log.write("...".grey);
 				utils.log.ok();
+
 				clearInterval(_interval);
 
 				// Write code to file
