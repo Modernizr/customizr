@@ -1,9 +1,9 @@
 {
 	"defaults": {
+		"cache" : true,
 		"devFile" : false,
-		"dest" : "build/modernizr-custom.js",
+		"dest" : false,
 		"options" : [
-			"setClasses",
 			"addTest",
 			"html5printshiv",
 			"testProp",
@@ -13,11 +13,14 @@
 		"tests" : [],
 		"excludeTests": [],
 		"crawl" : true,
-		"files" : [
-			"*[^(g|G)runt(file)?].{js,css,scss}",
-			"**[^node_modules]/**/*.{js,css,scss}",
-			"!lib/**/*"
-		],
+		"useBuffers": false,
+		"files" : {
+			"src": [
+				"*[^(g|G)runt(file)?].{js,css,scss}",
+				"**[^node_modules]/**/*.{js,css,scss}",
+				"!lib/**/*"
+			]
+		},
 		"customTests" : []
 	},
 	"private": {

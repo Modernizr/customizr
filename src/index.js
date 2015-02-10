@@ -40,14 +40,14 @@ module.exports = function (settings, callback) {
 			]);
 		},
 
-		finalize : function (options) {
+		finalize : function (obj) {
 			// Store the current options.
 			// If a subsequent build matches the options,
 			// we can assume the cached version will do fine.
-			this.utils.saveOptions(options);
+			this.utils.saveOptions(obj.options);
 
 			// All done.
-			return callback();
+			return (callback || function () {})(obj);
 		}
 	};
 

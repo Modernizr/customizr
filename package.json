@@ -1,17 +1,19 @@
 {
   "name": "customizr",
-  "version": "0.0.0",
+  "version": "1.0.0-alpha",
   "description": "",
   "main": "src",
   "bin": {
     "customizr": "bin/customizr"
   },
   "scripts": {
-    "test": "npm test"
+    "pretest": "node test/pretest.js",
+    "test": "node test/runner.js",
+    "postinstall": "node scripts/postinstall.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/doctyper/Customizr.git"
+    "url": "https://github.com/doctyper/customizr.git"
   },
   "keywords": [
     "modernizr",
@@ -20,7 +22,26 @@
   "author": "Richard Herrera",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/doctyper/Customizr/issues"
+    "url": "https://github.com/doctyper/customizr/issues"
   },
-  "homepage": "https://github.com/doctyper/Customizr"
+  "homepage": "https://github.com/doctyper/customizr",
+  "dependencies": {
+    "colors": "~0.6.2",
+    "deep-equal": "~0.1.2",
+    "glob": "~3.2.8",
+    "grunt-legacy-log": "~0.1.1",
+    "mkdirp": "~0.3.5",
+    "modernizr": "^3.0.0-alpha",
+    "nopt": "~2.1.2",
+    "optimist": "~0.6.0",
+    "promised-io": "~0.3.4",
+    "underscore": "~1.5.2",
+    "win-spawn": "^2.0.0"
+  },
+  "devDependencies": {
+    "expect.js": "~0.2.0",
+    "fs-extra": "^0.11.1",
+    "mocha": "~1.14.0",
+    "nexpect": "^0.5.0"
+  }
 }

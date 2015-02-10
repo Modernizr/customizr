@@ -118,7 +118,7 @@ module.exports = function (modernizrPath) {
 			}
 		},
 
-		readFile : function (file, metadata, encoding, deferred) {
+		readFile : function (file, metadata, deferred) {
 			var stream = fs.createReadStream(file);
 
 			stream.on("data", function (data) {
@@ -134,17 +134,25 @@ module.exports = function (modernizrPath) {
 
 		readFilesAsync : function (files, metadata) {
 			var deferred = new promise.Deferred(),
-				encoding = "utf8",
 				i, j, last;
 
 			this.currentFile = 0;
 			this.totalFiles = files.length;
 
 			for (i = 0, j = files.length; i < j; i++) {
-				this.readFile(files[i], metadata, encoding, deferred);
+				this.readFile(files[i], metadata, deferred);
 			}
 
 			return deferred.promise;
+		},
+
+		parseCodeFromBuffers : function (buffers, metadata) {
+			var i, j, file;
+
+			for (i = 0, j = buffers.length; i < j; i++) {
+				file = buffers[i];
+				this.parseData(file.path, String(file.contents), metadata);
+			}
 		},
 
 		init : function (metadata) {
@@ -210,7 +218,7 @@ module.exports = function (modernizrPath) {
 				}).indexOf(data.path) === -1;
 			});
 
-			if (settings.crawl !== true) {
+			if (settings.crawl !== true && settings.useBuffers !== true) {
 				tests = this.crawler.filterTests(tests);
 
 				if (!_quiet) {
@@ -228,6 +236,23 @@ module.exports = function (modernizrPath) {
 				utils.log.subhead("Looking for Modernizr references");
 			}
 
+			// Support including code via string rather than reading a file.
+			if (settings.useBuffers === true) {
+				this.crawler.parseCodeFromBuffers(settings.files.src, metadata);
+
+				for (var key in this.crawler.stringMatches) {
+					tests.push(key);
+				}
+
+				tests = this.crawler.filterTests(tests);
+
+				setTimeout(function () {
+					return deferred.resolve(tests);
+				});
+
+				return deferred.promise;
+			}
+
 			// Exclude developer build
 			if (settings.devFile !== "remote" && settings.devFile !== false) {
 				if (!fs.existsSync(settings.devFile)) {
@@ -241,19 +266,21 @@ module.exports = function (modernizrPath) {
 						""
 					].join("\n       ").replace(/\s$/, ""));
 				} else {
-					settings.files.push("!" + settings.devFile);
+					settings.files.src.push("!" + settings.devFile);
 				}
 			}
 
 			// Exclude generated file
-			settings.files.push("!" + settings.dest);
+			if (settings.dest) {
+				settings.files.src.push("!" + settings.dest);
+			}
 
 			// And exclude all files in this current directory
-			settings.files.push("!" + path.join(__dirname.replace(cwd + path.sep, ""), "**", "*"));
+			settings.files.src.push("!" + path.join(__dirname.replace(cwd + path.sep, ""), "**", "*"));
 
 			files = utils.file.expand({
 				filter: "isFile"
-			}, settings.files);
+			}, settings.files.src);
 
 			this.crawler.readFilesAsync(files, metadata).then(function () {
 				for (var key in this.crawler.stringMatches) {

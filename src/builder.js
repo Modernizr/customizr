@@ -24,10 +24,8 @@ module.exports = function (modernizrPath) {
 
 	return {
 		writeCodeToFile : function (result, config) {
-			var code = config.uglify ? result.min : result.code;
-
 			utils.log.ok(("Success! Saved file to " + config.dest).grey);
-			return utils.file.write(config.dest, code);
+			return utils.file.write(config.dest, result);
 		},
 
 		init : function (tests) {
@@ -65,13 +63,20 @@ module.exports = function (modernizrPath) {
 
 				utils.log.writeln("No config or test changes detected".bold.white);
 				utils.log.ok("The build step has been bypassed. Use `--force` to override.".grey);
-				utils.log.ok(("Your current file can be found in " + settings.dest).grey);
 
-				return deferred.resolve();
+				if (settings.dest) {
+					utils.log.ok(("Your current file can be found in " + settings.dest).grey);
+				}
+
+				setTimeout(function () {
+					return deferred.resolve({
+						result: useCachedVersion,
+						options: modernizrOptions
+					});
+				});
+
+				return deferred.promise;
 			}
-
-			// Set verbosity
-			modernizrOptions.verbose = (_verbose || false);
 
 			// Echo settings
 			utils.log.writeln();
@@ -94,12 +99,20 @@ module.exports = function (modernizrPath) {
 			var modernizr = require("modernizr");
 
 			modernizr.build(modernizrOptions, function (result) {
+				utils.log.write("...".grey);
 				utils.log.ok();
+
 				clearInterval(_interval);
 
 				// Write code to file
-				this.builder.writeCodeToFile(result, settings);
-				return deferred.resolve(modernizrOptions);
+				if (settings.dest) {
+					this.builder.writeCodeToFile(result, settings);
+				}
+
+				return deferred.resolve({
+					result: result,
+					options: modernizrOptions
+				});
 			}.bind(this));
 
 			return deferred.promise;
