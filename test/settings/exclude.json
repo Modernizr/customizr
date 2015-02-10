@@ -5,5 +5,10 @@
 		"emoji",
 		"notification"
 	],
+    "files": {
+        "src": [
+            "test/{js,css}/*"
+        ]
+    },
 	"uglify": false
 }

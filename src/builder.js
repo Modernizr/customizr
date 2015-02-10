@@ -24,10 +24,8 @@ module.exports = function (modernizrPath) {
 
 	return {
 		writeCodeToFile : function (result, config) {
-			var code = config.uglify ? result.min : result.code;
-
 			utils.log.ok(("Success! Saved file to " + config.dest).grey);
-			return utils.file.write(config.dest, code);
+			return utils.file.write(config.dest, result);
 		},
 
 		init : function (tests) {
@@ -81,7 +79,7 @@ module.exports = function (modernizrPath) {
 			}
 
 			// Set verbosity
-			modernizrOptions.verbose = (_verbose || false);
+			// modernizrOptions.verbose = (_verbose || false);
 
 			// Echo settings
 			utils.log.writeln();
@@ -103,17 +101,6 @@ module.exports = function (modernizrPath) {
 
 			var modernizr = require("modernizr");
 
-			// TODO: SWITCH TO NEW API:
-			//
-			// modernizr.build(modernizrOptions, {
-				// min: minify,
-				// verbose: (_verbose || false),
-				// callback: function () {}
-			// });
-			//
-			// REMEMBER TO UPDATE TEMPORARY REPO PATH:
-			// https://github.com/robwierzbowski/Modernizr/tarball/rw/new-build-sys
-
 			modernizr.build(modernizrOptions, function (result) {
 				utils.log.ok();
 				clearInterval(_interval);
@@ -124,7 +111,7 @@ module.exports = function (modernizrPath) {
 				}
 
 				return deferred.resolve({
-					result: (settings.uglify ? result.min : result.code),
+					result: result,
 					options: modernizrOptions
 				});
 			}.bind(this));

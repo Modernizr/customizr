@@ -4,7 +4,6 @@
 		"devFile" : false,
 		"dest" : false,
 		"options" : [
-			"setClasses",
 			"addTest",
 			"html5printshiv",
 			"testProp",

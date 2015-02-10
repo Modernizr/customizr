@@ -15,12 +15,10 @@ module.exports = function (modernizrPath) {
 			var deferred = new promise.Deferred();
 			var modernizr = require("modernizr");
 
-			// module.exports ftw?
-			(function () {
-				var mappings = modernizr.metadata;
+			modernizr.metadata(function (metadata) {
 				var modRegExp = new RegExp(modernizrPath + "/?");
 
-				mappings = mappings.map(function (map) {
+				var mappings = metadata.map(function (map) {
 					var cleanname = map.name.replace(modRegExp, ""),
 						testpath = map.amdPath.replace(modRegExp, "").replace("feature-detects", "test");
 
@@ -33,7 +31,7 @@ module.exports = function (modernizrPath) {
 				});
 
 				return deferred.resolve(mappings);
-			}());
+			});
 
 			return deferred.promise;
 		}

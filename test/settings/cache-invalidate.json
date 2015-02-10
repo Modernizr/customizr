@@ -1,4 +1,9 @@
 {
 	"dest": "build/modernizr-custom.js",
-	"cache": false
+	"cache": false,
+    "files": {
+        "src": [
+            "test/{js,css}/*"
+        ]
+    }
 }
