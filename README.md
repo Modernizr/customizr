@@ -58,7 +58,6 @@ A sample config file is below. Default values shown:
 
 	// Based on default settings on http://modernizr.com/download/
 	"options" : [
-		"setClasses",
 		"addTest",
 		"html5printshiv",
 		"testProp",
