@@ -80,9 +80,7 @@ define(["Modernizr"], function (M) {
 			"lowbattery": M.lowbattery
 		},
 		"canvas": {
-			"blending": [
-				M["canvasblending"]
-			],
+			"blending": M.canvasblending,
 			"todataurl": [
 				M["todataurljpeg"],
 				M["todataurlpng"],
@@ -333,7 +331,8 @@ define(["Modernizr"], function (M) {
 			"binary": M.websocketsbinary
 		},
 		"window": {
-			"framed": M.framed
+			"framed": M.framed,
+			"matchmedia": M.matchmedia
 		},
 		"workers": {
 			"blobworkers": M.blobworkers,
