@@ -1,5 +1,5 @@
 {
-	"cssprefix": "prefixed-",
+	"classPrefix": "prefixed-",
 	"dest": "build/modernizr-prefixed.js",
 	"uglify": false,
 	"files": {
