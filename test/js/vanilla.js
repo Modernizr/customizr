@@ -79,9 +79,7 @@ var tests = {
 		"lowbattery": Modernizr.lowbattery
 	},
 	"canvas": {
-		"blending": [
-			Modernizr["canvasblending"]
-		],
+		"blending": Modernizr.canvasblending,
 		"todataurl": [
 			Modernizr["todataurljpeg"],
 			Modernizr["todataurlpng"],
@@ -332,7 +330,8 @@ var tests = {
 		"binary": Modernizr.websocketsbinary
 	},
 	"window": {
-		"framed": Modernizr.framed
+		"framed": Modernizr.framed,
+		"matchmedia": Modernizr.matchmedia
 	},
 	"workers": {
 		"blobworkers": Modernizr.blobworkers,

@@ -239,11 +239,12 @@
 .peerconnection,
 .no-websocketsbinary,
 .framed,
-.no-blobworkers,
-.dataworkers,
-.no-sharedworkers,
-.transferables,
-.no-webworkers {
+.no-matchmedia,
+.blobworkers,
+.no-dataworkers,
+.sharedworkers,
+.no-transferables,
+.webworkers {
 	background: red;
 }
 
