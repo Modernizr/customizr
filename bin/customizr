@@ -34,10 +34,6 @@ function help() {
 	return out.join("\n");
 }
 
-function normalizeSlashes(string) {
-    return string.replace(/\\/g, '/');
-}
-
 function configInPackage()
 {
     var config = JSON.parse(fs.readFileSync('package.json'));
@@ -56,7 +52,6 @@ if (opts.help) {
 	return process.exit();
 } else {
 	var config = {};
-	configInPackage();
 
 	if (opts.config) {
 
