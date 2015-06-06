@@ -34,6 +34,16 @@ function help() {
 	return out.join("\n");
 }
 
+function configInPackage()
+{
+    var config = JSON.parse(fs.readFileSync('package.json'));
+    if ('customizr' in config) {
+        return config.customizr;
+    }
+
+    return {};
+}
+
 if (opts.help) {
 	process.stdout.write(help());
 	return process.exit();
@@ -46,11 +56,17 @@ if (opts.help) {
 	if (opts.config) {
 		if (fs.existsSync(opts.config)) {
 			config = JSON.parse(fs.readFileSync(opts.config));
+
+            if (path.basename(opts.config) === 'package.json') {
+                config = configInPackage();
+            }
 		} else {
 			process.stderr.write("Path does not exist.");
 			return process.exit();
 		}
-	}
+	} else {
+         config = configInPackage();
+     }
 
 	return customizr(config, process.exit);
 }
