@@ -151,6 +151,10 @@ Have custom Modernizr tests? Add paths to their location here. The object suppor
 
 This is an optional parameter.
 
+###### **`cssprefix`** (string, optional)
+This has to be used instead of the official `classPrefix` referenced in the modernizr documentation.
+There is a pending PR [#16](https://github.com/doctyper/customizr/pull/16).
+
 ## Caching
 
 For large projects, building a custom Modernizr file can be an expensive task. `customizr` does its best to avoid unnecessary builds by following a set criteria. When all of the following are met, it assumes that no changes are necessary:
