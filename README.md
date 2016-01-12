@@ -79,6 +79,11 @@ A sample config file is below. Default values shown:
 	// By default, will crawl your project for references to Modernizr tests
 	// Set to false to disable
 	"crawl" : true,
+	
+	// By default the crawler will detect tests as properties of any object in JS and any matching class in CSS/SASS/LESS
+	// Setting this to true will only detect JS properties that are properties of the `Modernizr` object and CSS classes 
+	// that are scoped to the HTML object.  
+	"crawlStrict" : false
 
 	// Set to true to pass in buffers via the "files" parameter below
 	"useBuffers" : false,
