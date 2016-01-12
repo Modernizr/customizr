@@ -50,14 +50,18 @@ module.exports = function (modernizrPath) {
 					return;
 				}
 				// Match usage such as: Modernizr.classname --or-- Modernizr['classname']
-				regExp = new RegExp("(?:\\.|\\[(?:\"|'))(" + type + ")(?![\\w-])(?:(?:\"|')\\])?", "gm");
+                // when crawlStrict is set to true, the crawler will only detect properties of the Modernizr object (i.e `Modernizr.touchevents` will match but not `somethingElse.touchevents`)
+                var jsPattern = (settings.crawlStrict) ? "(?:Modernizr\\.|Modernizr\\[(?:\"|'))(" + type + ")(?![\\w-])(?:(?:\"|')\\])?" : "(?:\\.|\\[(?:\"|'))(" + type + ")(?![\\w-])(?:(?:\"|')\\])?";
+                regExp = new RegExp(jsPattern, "gm");
 			}
 			// If it's not JS, assume it's CSS (or similar, e.g.: LESS, SCSS) files
 			else {
 				prefix = settings.classPrefix || '';
 				// When no prefix, match usage such as: .classname --or-- .no-classname
 				// When prefix set, match usage such as: .<prefix>classname --or-- .<prefix>no-classname
-				regExp = new RegExp("(?:\\." + prefix + ")(?:no-)?(" + type + ")(?![\\w-])", "gm");
+                // when crawlStrict is set to true, the crawler will only detect classes scoped to the html element (i.e `html.touchevents` will match but not `.touchevents`
+                var cssPattern = (settings.crawlStrict) ? "(?:html\\." + prefix + ")(?:no-)?(" + type + ")(?![\\w-])" : "(?:\\." + prefix + ")(?:no-)?(" + type + ")(?![\\w-])";
+                regExp = new RegExp(cssPattern, "gm");
 			}
 			match = (regExp).exec(data);
 
