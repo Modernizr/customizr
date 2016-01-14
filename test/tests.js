@@ -221,11 +221,14 @@ describe("custom builds", function () {
 			var includedTests = includedTestArray.join(" ");
 
 			var contents;
+			var testPattern;
 
 			includedTestArray.forEach(function (test) {
 				it(test, function (done) {
 					contents = contents || fs.readFileSync(path.join(cwd, "build", "modernizr-select.js"), "utf8");
-					expect(contents.indexOf(test)).to.not.equal(-1);
+
+					testPattern = "addTest('" + test.toLowerCase() + "'";
+					expect(contents.indexOf(testPattern)).to.not.equal(-1);
 					done();
 				});
 			});
@@ -239,7 +242,7 @@ describe("custom builds", function () {
 					it(test, function (done) {
 						contents = contents || fs.readFileSync(path.join(cwd, "build", "modernizr-select.js"), "utf8");
 
-						var testPattern = "addTest('" + test.toLowerCase();
+						testPattern = "addTest('" + test.toLowerCase() + "'";
 						expect(contents.indexOf(testPattern)).to.equal(-1);
 						done();
 					});
@@ -288,11 +291,14 @@ describe("custom builds", function () {
 			var excludedTests = excludedTestArray.join(" ");
 
 			var contents;
+			var testPattern;
 
 			excludedTestArray.forEach(function (test) {
 				it(test, function (done) {
 					contents = contents || fs.readFileSync(path.join(cwd, "build", "modernizr-exclude.js"), "utf8");
-					expect(contents.indexOf(test)).to.equal(-1);
+
+					testPattern = "addTest('" + test.toLowerCase() + "'";
+					expect(contents.indexOf(testPattern)).to.equal(-1);
 					done();
 				});
 			});
@@ -315,7 +321,7 @@ describe("custom builds", function () {
 			.wait("Looking for Modernizr references")
 
 			.expect(">> 3 matches in test/css/vanilla.css")
-			.expect(">> cors, input, smil")
+			.expect(">> cors, fontface, smil")
 
 			.wait("Building your customized Modernizr").wait("OK")
 			.expect(">> Success! Saved file to build/modernizr-prefixed.js")
@@ -333,7 +339,7 @@ describe("custom builds", function () {
 
 			var includedTestArray = [
 				"cors",
-				"input",
+				"fontface",
 				"smil"
 			];
 
@@ -341,11 +347,14 @@ describe("custom builds", function () {
 			var includedTests = includedTestArray.join(" ");
 
 			var contents;
+			var testPattern;
 
 			includedTestArray.forEach(function (test) {
 				it(test, function (done) {
 					contents = contents || fs.readFileSync(path.join(cwd, "build", "modernizr-prefixed.js"), "utf8");
-					expect(contents.indexOf(test)).to.not.equal(-1);
+
+					testPattern = "addTest('" + test.toLowerCase() + "'";
+					expect(contents.indexOf(testPattern)).to.not.equal(-1);
 					done();
 				});
 			});

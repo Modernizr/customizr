@@ -106,7 +106,7 @@ modernizr.metadata(function (metadata) {
 		// Take a few classes and add a prefix for testing.
 		var prefixed = [
 			".prefixed-cors",
-			".prefixed-input",
+			".prefixed-fontface",
 			".prefixed-no-smil"
 		];
 
