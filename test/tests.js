@@ -22,7 +22,8 @@ var settings = {
 	custom: path.join(settingsPath, "custom.json"),
 	exclude: path.join(settingsPath, "exclude.json"),
 	prefixed: path.join(settingsPath, "prefixed.json"),
-	select: path.join(settingsPath, "select.json")
+	select: path.join(settingsPath, "select.json"),
+	user: path.join(settingsPath, "user-custom.json")
 };
 
 describe("customizr", function () {
@@ -358,7 +359,74 @@ describe("custom builds", function () {
 					it(test, function (done) {
 						contents = contents || fs.readFileSync(path.join(cwd, "build", "modernizr-prefixed.js"), "utf8");
 
-						var testPattern = "addTest('" + test.toLowerCase();
+						testPattern = "addTest('" + test.toLowerCase() + "'";
+						expect(contents.indexOf(testPattern)).to.equal(-1);
+						done();
+					});
+				});
+			});
+		});
+
+	});
+
+	describe("user test", function () {
+
+		it("should only build user tests", function (done) {
+			process.stdout.write("\n\n");
+
+			nexpect.spawn(cli, [
+				"--config", settings.user
+			], {
+				stripColors: true,
+				verbose: true
+			})
+
+			.wait("Building your customized Modernizr").wait("OK")
+			.expect(">> Success! Saved file to build/modernizr-user-custom.js")
+
+			.run(function (err) {
+				if (!err) {
+					done();
+				} else {
+					throw err;
+				}
+			});
+		});
+
+		describe("should only contain references to bundled tests", function () {
+
+			var includedTestArray = [
+				"svg",
+				"storage",
+				"animationend"
+			];
+
+			var testsLength = includedTestArray.length;
+			var includedTests = includedTestArray.join(" ");
+
+			var contents;
+			var testPattern;
+
+			includedTestArray.forEach(function (test) {
+				it(test, function (done) {
+					contents = contents || fs.readFileSync(path.join(cwd, "build", "modernizr-user-custom.js"), "utf8");
+
+					testPattern = "addTest('" + test.toLowerCase() + "'";
+					expect(contents.indexOf(testPattern)).to.not.equal(-1);
+					done();
+				});
+			});
+
+			describe("should not contain these references", function (done) {
+				var excludedTestArray = testArray.filter(function (test) {
+					return includedTestArray.indexOf(test) === -1;
+				});
+
+				excludedTestArray.forEach(function (test) {
+					it(test, function (done) {
+						contents = contents || fs.readFileSync(path.join(cwd, "build", "modernizr-user-custom.js"), "utf8");
+
+						testPattern = "addTest('" + test.toLowerCase() + "'";
 						expect(contents.indexOf(testPattern)).to.equal(-1);
 						done();
 					});

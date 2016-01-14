@@ -1,0 +1,12 @@
+{
+	"dest": "build/modernizr-user-custom.js",
+	"crawl": false,
+	"uglify": false,
+	"tests": [
+		"svg"
+	],
+	"customTests": [
+		"test/user-tests/storage",
+		"test/user-tests/animationend.js"
+	]
+}
