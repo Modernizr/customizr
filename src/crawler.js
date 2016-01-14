@@ -209,7 +209,8 @@ module.exports = function (modernizrPath) {
 					return test.path;
 				}).indexOf(test) === -1;
 			}).concat(settings.customTests.map(function (test) {
-				return path.relative(buildPath, fs.realpathSync(test));
+				test = test.replace( '.js', '' );
+				return path.relative(buildPath, path.resolve( test ));
 			}));
 
 			metadata = metadata.filter(function (data) {
