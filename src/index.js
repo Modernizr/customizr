@@ -10,7 +10,7 @@ module.exports = function (settings, callback) {
 	var promise = require("promised-io/promise");
 
 	// Modernizr
-	var modernizrPath = path.join(__dirname, "..", "node_modules", "modernizr");
+	var modernizrPath = path.join(require.resolve("modernizr"), "../..");
 
 	var Customizr = function () {
 		return this.init();
