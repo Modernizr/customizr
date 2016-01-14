@@ -16,15 +16,16 @@ define(["Modernizr"], function (M) {
 			"contextmenu": M.contextmenu,
 			"cookies": M.cookies,
 			"cors": M.cors,
+			"crypto": M.cryptography,
 			"custom-protocol-handler": M.customprotocolhandler,
 			"customevent": M.customevent,
 			"dart": M.dart,
 			"dataview-api": M.dataview,
-			"draganddrop": M.draganddrop,
 			"emoji": M.emoji,
 			"eventlistener": M.eventlistener,
 			"exif-orientation": M.exiforientation,
 			"flash": M.flash,
+			"forcetouch": M.forcetouch,
 			"fullscreen-api": M.fullscreen,
 			"gamepad": M.gamepads,
 			"geolocation": M.geolocation,
@@ -40,6 +41,7 @@ define(["Modernizr"], function (M) {
 			"inputtypes": M.inputtypes,
 			"intl": M.intl,
 			"json": M.json,
+			"ligatures": M.ligatures,
 			"lists-reversed": M.olreversed,
 			"mathml": M.mathml,
 			"notification": M.notification,
@@ -66,7 +68,8 @@ define(["Modernizr"], function (M) {
 			"web-intents": M.webintents,
 			"webanimations": M.animation,
 			"webgl": M.webgl,
-			"websockets": M.websockets
+			"websockets": M.websockets,
+			"xdomainrequest": M.xdomainrequest
 		},
 		"a": {
 			"download": M.adownload
@@ -97,6 +100,7 @@ define(["Modernizr"], function (M) {
 			"all": M.cssall,
 			"animations": M.cssanimations,
 			"appearance": M.appearance,
+			"backdropfilter": M.backdropfilter,
 			"backgroundblendmode": M.backgroundblendmode,
 			"backgroundcliptext": M.backgroundcliptext,
 			"backgroundposition-shorthand": M.bgpositionshorthand,
@@ -129,6 +133,7 @@ define(["Modernizr"], function (M) {
 			"fontface": M.fontface,
 			"generatedcontent": M.generatedcontent,
 			"gradients": M.cssgradients,
+			"hairline": M.csshairline,
 			"hsla": M.hsla,
 			"hyphens": [
 				M["csshyphens"],
@@ -154,6 +159,7 @@ define(["Modernizr"], function (M) {
 			"resize": M.cssresize,
 			"rgba": M.rgba,
 			"scrollbars": M.cssscrollbar,
+			"scrollsnappoints": M.scrollsnappoints,
 			"shapes": M.shapes,
 			"siblinggeneral": M.siblinggeneral,
 			"subpixelfont": M.subpixelfont,
@@ -187,6 +193,7 @@ define(["Modernizr"], function (M) {
 			"mutationObserver": M.mutationobserver
 		},
 		"elem": {
+			"bdi": M.bdi,
 			"datalist": M.datalistelem,
 			"details": M.details,
 			"output": M.outputelem,
@@ -217,6 +224,7 @@ define(["Modernizr"], function (M) {
 		},
 		"es6": {
 			"array": M.es6array,
+			"collections": M.es6collections,
 			"contains": M.contains,
 			"generators": M.generators,
 			"math": M.es6math,
@@ -253,6 +261,8 @@ define(["Modernizr"], function (M) {
 		},
 		"img": {
 			"apng": M.apng,
+			"crossorigin": M.imgcrossorigin,
+			"jpeg2000": M.jpeg2000,
 			"jpegxr": M.jpegxr,
 			"sizes": M.sizes,
 			"srcset": M.srcset,
@@ -274,6 +284,7 @@ define(["Modernizr"], function (M) {
 			"beacon": M.beacon,
 			"connection": M.lowbandwidth,
 			"eventsource": M.eventsource,
+			"fetch": M.fetch,
 			"xhr-responsetype-arraybuffer": M.xhrresponsetypearraybuffer,
 			"xhr-responsetype-blob": M.xhrresponsetypeblob,
 			"xhr-responsetype-document": M.xhrresponsetypedocument,
@@ -331,6 +342,9 @@ define(["Modernizr"], function (M) {
 			"binary": M.websocketsbinary
 		},
 		"window": {
+			"atob-btoa": [
+				M["atobbtoa"]
+			],
 			"framed": M.framed,
 			"matchmedia": M.matchmedia
 		},
