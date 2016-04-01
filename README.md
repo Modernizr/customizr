@@ -110,8 +110,8 @@ Path to save the customized Modernizr build. It defaults to `lib/modernizr-custo
 
 This is an optional parameter. If undefined or falsy, `customizr` will return the result as a string and will not write to disk.
 
-###### **`options`** (Object, optional)
-An object of extra configuration options. Check the extra section on [modernizr.com/download](http://modernizr.com/download/) for complete options. Defaults are as they appear on the official site.
+###### **`options`** (Array, optional)
+An array of extra configuration options. Check the extra section on [modernizr.com/download](http://modernizr.com/download/) for complete options. Defaults are as they appear on the official site.
 
 This is an optional parameter.
 
