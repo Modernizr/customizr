@@ -93,7 +93,10 @@ A sample config file is below. Default values shown:
 	},
 
 	// Have custom Modernizr tests? Add them here.
-	"customTests" : []
+	"customTests" : [],
+
+	// Setting 'quiet' to true suppresses all output
+	"quiet" : false
 }
 ```
 
@@ -132,6 +135,11 @@ This is an optional parameter.
 
 ###### **`crawl`** (Boolean, optional)
 By default, this task will crawl your project for references to Modernizr tests. Set to false to disable.
+
+This is an optional parameter.
+
+###### **`quiet`** (Boolean, optional)
+By default, output is shown. Set to true to disable output.
 
 This is an optional parameter.
 
@@ -194,7 +202,8 @@ var settings = {
 	"uglify" : true,
 	"tests" : [],
 	"excludeTests": [],
-	"crawl" : true,
+    "crawl" : true,
+	"quiet" : false,
 	"useBuffers": false,
 	"files" : {
 		"src": [
