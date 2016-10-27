@@ -2,7 +2,8 @@
 module.exports = function (modernizrPath) {
 	"use strict";
 
-	var argv = require("optimist").argv;
+	var argv = require("optimist").argv,
+			_ = require("underscore");
 
 	// Config object
 	var _quiet = argv.quiet,
@@ -168,6 +169,9 @@ module.exports = function (modernizrPath) {
 
 			var tests = settings.tests.map(function (test) {
 				var data = metadata.filter(function (data) {
+					if (Array.isArray(test)) {
+						return test.indexOf(data) !== -1 || _.isEqual(test, data.property);
+					}
 					return data.property === test;
 				});
 
