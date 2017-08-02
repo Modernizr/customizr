@@ -31,7 +31,7 @@
     "glob": "~7.1.2",
     "grunt-legacy-log": "~1.0.0",
     "mkdirp": "~0.5.1",
-    "modernizr": "^3.0.0-alpha",
+    "modernizr": "~3.5.0",
     "nopt": "~2.1.2",
     "optimist": "~0.6.0",
     "promised-io": "~0.3.4",
