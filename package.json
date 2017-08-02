@@ -36,7 +36,7 @@
     "optimist": "~0.6.0",
     "promised-io": "~0.3.4",
     "underscore": "~1.5.2",
-    "win-spawn": "^2.0.0"
+    "cross-spawn": "~5.1.0"
   },
   "devDependencies": {
     "expect.js": "~0.2.0",
