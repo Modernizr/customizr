@@ -34,7 +34,7 @@
     "modernizr": "~3.5.0",
     "nopt": "~4.0.1",
     "optimist": "~0.6.1",
-    "promised-io": "~0.3.4",
+    "promised-io": "~0.3.5",
     "underscore": "~1.5.2",
     "cross-spawn": "~5.1.0"
   },
