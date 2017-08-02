@@ -29,7 +29,7 @@
     "colors": "~1.1.2",
     "fast-deep-equal": "~1.0.0",
     "glob": "~7.1.2",
-    "grunt-legacy-log": "~0.1.1",
+    "grunt-legacy-log": "~1.0.0",
     "mkdirp": "~0.3.5",
     "modernizr": "^3.0.0-alpha",
     "nopt": "~2.1.2",
