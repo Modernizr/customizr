@@ -1,6 +1,6 @@
 # customizr
 
-[![Build Status](https://secure.travis-ci.org/doctyper/customizr.png?branch=master,develop)](https://travis-ci.org/doctyper/customizr)
+[![Build Status](https://api.travis-ci.org/Modernizr/customizr.png?branch=master,develop)](https://travis-ci.org/doctyper/customizr)
 
 [![NPM](https://nodei.co/npm/customizr.png?compact=true)](https://nodei.co/npm/customizr/)
 
