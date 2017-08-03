@@ -15,15 +15,17 @@ var tests = {
 		"contextmenu": Modernizr.contextmenu,
 		"cookies": Modernizr.cookies,
 		"cors": Modernizr.cors,
+		"crypto": Modernizr.cryptography,
+		"custom-elements": Modernizr.customelements,
 		"custom-protocol-handler": Modernizr.customprotocolhandler,
 		"customevent": Modernizr.customevent,
 		"dart": Modernizr.dart,
 		"dataview-api": Modernizr.dataview,
-		"draganddrop": Modernizr.draganddrop,
 		"emoji": Modernizr.emoji,
 		"eventlistener": Modernizr.eventlistener,
 		"exif-orientation": Modernizr.exiforientation,
 		"flash": Modernizr.flash,
+		"forcetouch": Modernizr.forcetouch,
 		"fullscreen-api": Modernizr.fullscreen,
 		"gamepad": Modernizr.gamepads,
 		"geolocation": Modernizr.geolocation,
@@ -39,8 +41,10 @@ var tests = {
 		"inputtypes": Modernizr.inputtypes,
 		"intl": Modernizr.intl,
 		"json": Modernizr.json,
+		"ligatures": Modernizr.ligatures,
 		"lists-reversed": Modernizr.olreversed,
 		"mathml": Modernizr.mathml,
+		"messagechannel": Modernizr.MessageChannel,
 		"notification": Modernizr.notification,
 		"pagevisibility-api": Modernizr.pagevisibility,
 		"performance": Modernizr.performance,
@@ -65,7 +69,8 @@ var tests = {
 		"web-intents": Modernizr.webintents,
 		"webanimations": Modernizr.animation,
 		"webgl": Modernizr.webgl,
-		"websockets": Modernizr.websockets
+		"websockets": Modernizr.websockets,
+		"xdomainrequest": Modernizr.xdomainrequest
 	},
 	"a": {
 		"download": Modernizr.adownload
@@ -79,9 +84,7 @@ var tests = {
 		"lowbattery": Modernizr.lowbattery
 	},
 	"canvas": {
-		"blending": [
-			Modernizr["canvasblending"]
-		],
+		"blending": Modernizr.canvasblending,
 		"todataurl": [
 			Modernizr["todataurljpeg"],
 			Modernizr["todataurlpng"],
@@ -98,6 +101,7 @@ var tests = {
 		"all": Modernizr.cssall,
 		"animations": Modernizr.cssanimations,
 		"appearance": Modernizr.appearance,
+		"backdropfilter": Modernizr.backdropfilter,
 		"backgroundblendmode": Modernizr.backgroundblendmode,
 		"backgroundcliptext": Modernizr.backgroundcliptext,
 		"backgroundposition-shorthand": Modernizr.bgpositionshorthand,
@@ -116,6 +120,10 @@ var tests = {
 		"checked": Modernizr.checked,
 		"chunit": Modernizr.csschunit,
 		"columns": Modernizr.csscolumns,
+		"cssgrid": [
+			Modernizr["cssgrid"],
+			Modernizr["cssgridlegacy"]
+		],
 		"cubicbezierrange": Modernizr.cubicbezierrange,
 		"displayrunin": Modernizr["display-runin"],
 		"displaytable": Modernizr.displaytable,
@@ -130,6 +138,7 @@ var tests = {
 		"fontface": Modernizr.fontface,
 		"generatedcontent": Modernizr.generatedcontent,
 		"gradients": Modernizr.cssgradients,
+		"hairline": Modernizr.hairline,
 		"hsla": Modernizr.hsla,
 		"hyphens": [
 			Modernizr["csshyphens"],
@@ -155,6 +164,7 @@ var tests = {
 		"resize": Modernizr.cssresize,
 		"rgba": Modernizr.rgba,
 		"scrollbars": Modernizr.cssscrollbar,
+		"scrollsnappoints": Modernizr.scrollsnappoints,
 		"shapes": Modernizr.shapes,
 		"siblinggeneral": Modernizr.siblinggeneral,
 		"subpixelfont": Modernizr.subpixelfont,
@@ -164,6 +174,7 @@ var tests = {
 		"textshadow": Modernizr.textshadow,
 		"transforms": Modernizr.csstransforms,
 		"transforms3d": Modernizr.csstransforms3d,
+		"transformslevel2": Modernizr.csstransformslevel2,
 		"transformstylepreserve3d": Modernizr.preserve3d,
 		"transitions": Modernizr.csstransitions,
 		"userselect": Modernizr.userselect,
@@ -185,9 +196,11 @@ var tests = {
 		"documentfragment": Modernizr.documentfragment,
 		"hidden": Modernizr.hidden,
 		"microdata": Modernizr.microdata,
-		"mutationObserver": Modernizr.mutationobserver
+		"mutationObserver": Modernizr.mutationobserver,
+		"passiveeventlisteners": Modernizr.passiveeventlisteners
 	},
 	"elem": {
+		"bdi": Modernizr.bdi,
 		"datalist": Modernizr.datalistelem,
 		"details": Modernizr.details,
 		"output": Modernizr.outputelem,
@@ -218,6 +231,8 @@ var tests = {
 	},
 	"es6": {
 		"array": Modernizr.es6array,
+		"arrow": Modernizr.arrow,
+		"collections": Modernizr.es6collections,
 		"contains": Modernizr.contains,
 		"generators": Modernizr.generators,
 		"math": Modernizr.es6math,
@@ -254,6 +269,8 @@ var tests = {
 	},
 	"img": {
 		"apng": Modernizr.apng,
+		"crossorigin": Modernizr.imgcrossorigin,
+		"jpeg2000": Modernizr.jpeg2000,
 		"jpegxr": Modernizr.jpegxr,
 		"sizes": Modernizr.sizes,
 		"srcset": Modernizr.srcset,
@@ -271,10 +288,15 @@ var tests = {
 		"formmethod": Modernizr.inputformmethod,
 		"formtarget": Modernizr.inputformtarget
 	},
+	"mediaquery": {
+		"hovermq": Modernizr.hovermq,
+		"pointermq": Modernizr.pointermq
+	},
 	"network": {
 		"beacon": Modernizr.beacon,
 		"connection": Modernizr.lowbandwidth,
 		"eventsource": Modernizr.eventsource,
+		"fetch": Modernizr.fetch,
 		"xhr-responsetype-arraybuffer": Modernizr.xhrresponsetypearraybuffer,
 		"xhr-responsetype-blob": Modernizr.xhrresponsetypeblob,
 		"xhr-responsetype-document": Modernizr.xhrresponsetypedocument,
@@ -313,10 +335,12 @@ var tests = {
 	"url": {
 		"bloburls": Modernizr.bloburls,
 		"data-uri": Modernizr.datauri,
-		"parser": Modernizr.urlparser
+		"parser": Modernizr.urlparser,
+		"urlsearchparams": Modernizr.urlsearchparams
 	},
 	"video": {
 		"autoplay": Modernizr.videoautoplay,
+		"crossorigin": Modernizr.videocrossorigin,
 		"loop": Modernizr.videoloop,
 		"preload": Modernizr.videopreload
 	},
@@ -332,7 +356,11 @@ var tests = {
 		"binary": Modernizr.websocketsbinary
 	},
 	"window": {
-		"framed": Modernizr.framed
+		"atob-btoa": [
+			Modernizr["atobbtoa"]
+		],
+		"framed": Modernizr.framed,
+		"matchmedia": Modernizr.matchmedia
 	},
 	"workers": {
 		"blobworkers": Modernizr.blobworkers,

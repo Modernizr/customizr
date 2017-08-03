@@ -1,7 +1,7 @@
 var colors = require("colors");
 var path = require("path");
 var cwd = path.resolve(__dirname, "..");
-var spawn = require('win-spawn');;
+var spawn = require('cross-spawn');;
 var fs = require("fs");
 
 var modernizrPath = path.join(cwd, "node_modules", "modernizr");

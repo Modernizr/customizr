@@ -1,10 +1,8 @@
 # customizr
 
-[![Build Status](https://secure.travis-ci.org/doctyper/customizr.png?branch=master,develop)](https://travis-ci.org/doctyper/customizr)
+[![Build Status](https://api.travis-ci.org/Modernizr/customizr.png?branch=master,develop)](https://travis-ci.org/doctyper/customizr)
 
-<!--- TODO: SOON
 [![NPM](https://nodei.co/npm/customizr.png?compact=true)](https://nodei.co/npm/customizr/)
--->
 
 ##### *tl;dr:* This tool crawls through your project files, gathers up your references to Modernizr tests and outputs a lean, mean Modernizr machine.
 
