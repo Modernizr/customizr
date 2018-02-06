@@ -18,7 +18,7 @@ A Grunt wrapper is available at: [https://github.com/Modernizr/grunt-modernizr](
 
 ## Use with Gulp
 
-A Gulp wrapper is available at: [https://github.com/doctyper/gulp-modernizr](https://github.com/doctyper/gulp-modernizr)
+A Gulp wrapper is available at: [https://github.com/rejas/gulp-modernizr](https://github.com/rejas/gulp-modernizr)
 
 ## Getting Started
 
