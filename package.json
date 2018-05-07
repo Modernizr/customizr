@@ -28,7 +28,7 @@
   "dependencies": {
     "colors": "~1.2.4",
     "cross-spawn": "~6.0.5",
-    "deep-equal": "~1.0.1",
+    "fast-deep-equal": "~2.0.1",
     "glob": "~7.1.2",
     "mkdirp": "~0.5.1",
     "modernizr": "~3.6.0",
