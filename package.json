@@ -30,7 +30,6 @@
     "cross-spawn": "~6.0.5",
     "deep-equal": "~0.1.2",
     "glob": "~3.2.8",
-    "grunt-legacy-log": "~0.1.1",
     "mkdirp": "~0.3.5",
     "modernizr": "^3.0.0-alpha",
     "nopt": "~2.1.2",
