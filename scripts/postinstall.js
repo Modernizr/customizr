@@ -14,7 +14,7 @@ if (fs.existsSync(modernizrPath)) {
 	console.log("--------------------------------------------------------------------------------------------------------------------------------------------");
 	console.log();
 
-	var child = spawn("npm", ["install", "--production"], {
+	var child = spawn("yarn", ["install", "--production"], {
 		cwd: modernizrPath,
 		stdio: "inherit"
 	});
