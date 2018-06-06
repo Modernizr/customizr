@@ -5,8 +5,7 @@ module.exports = function (modernizrPath) {
 	var argv = require("optimist").argv;
 
 	// Config object
-	var _quiet = argv.quiet,
-		_force = argv.force,
+	var _force = argv.force,
 		_verbose = argv.verbose;
 
 	// Dependencies
@@ -24,7 +23,9 @@ module.exports = function (modernizrPath) {
 
 	return {
 		writeCodeToFile : function (result, config) {
-			utils.log.ok(("Success! Saved file to " + config.dest).grey);
+            if (!settings.quiet) {
+			    utils.log.ok(("Success! Saved file to " + config.dest).grey);
+            }
 			return utils.file.write(config.dest, result);
 		},
 
@@ -48,8 +49,7 @@ module.exports = function (modernizrPath) {
 				"feature-detects": tests,
 				"options": options,
 				"minify": minify,
-				"dest": settings.dest,
-				"classPrefix" : settings.classPrefix
+				"dest": settings.dest
 			};
 
 			// Perform a series of checks to validify cache
@@ -60,14 +60,16 @@ module.exports = function (modernizrPath) {
 			}
 
 			if (useCachedVersion) {
-				utils.log.writeln();
+                if (!settings.quiet) {
+    				utils.log.writeln();
 
-				utils.log.writeln("No config or test changes detected".bold.white);
-				utils.log.ok("The build step has been bypassed. Use `--force` to override.".grey);
+    				utils.log.writeln("No config or test changes detected".bold.white);
+    				utils.log.ok("The build step has been bypassed. Use `--force` to override.".grey);
 
-				if (settings.dest) {
-					utils.log.ok(("Your current file can be found in " + settings.dest).grey);
-				}
+    				if (settings.dest) {
+    					utils.log.ok(("Your current file can be found in " + settings.dest).grey);
+    				}
+                }
 
 				setTimeout(function () {
 					return deferred.resolve({
@@ -80,28 +82,32 @@ module.exports = function (modernizrPath) {
 			}
 
 			// Echo settings
-			utils.log.writeln();
-			utils.log.ok("Ready to build using these settings:");
-			utils.log.ok(options.join(", ").grey);
+            if (!settings.quiet) {
+    			utils.log.writeln();
+    			utils.log.ok("Ready to build using these settings:");
+    			utils.log.ok(options.join(", ").grey);
 
-			if (minify) {
-				utils.log.ok("Your file will be minified with UglifyJS".grey);
-			}
+    			if (minify) {
+    				utils.log.ok("Your file will be minified with UglifyJS".grey);
+    			}
 
-			utils.log.writeln();
-			utils.log.write("Building your customized Modernizr".bold.white);
+    			utils.log.writeln();
+    			utils.log.write("Building your customized Modernizr".bold.white);
 
-			if (!_verbose) {
-				_interval = setInterval(function () {
-					utils.log.write(".".grey);
-				}.bind(this), 200);
-			}
+    			if (!_verbose) {
+    				_interval = setInterval(function () {
+    					utils.log.write(".".grey);
+    				}.bind(this), 200);
+    			}
+            }
 
 			var modernizr = require("modernizr");
 
 			modernizr.build(modernizrOptions, function (result) {
-				utils.log.write("...".grey);
-				utils.log.ok();
+                if (!settings.quiet) {
+    				utils.log.write("...".grey);
+    				utils.log.ok();
+                }
 
 				clearInterval(_interval);
 
