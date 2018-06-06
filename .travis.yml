@@ -1,6 +1,6 @@
 before_install:
   # Node
-  - npm cache clean -g
+  - npm cache verify
 language: node_js
 node_js:
-  - "0.10"
+  - "node"
