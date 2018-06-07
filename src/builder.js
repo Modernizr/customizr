@@ -5,16 +5,8 @@ module.exports = function (modernizrPath) {
 	var argv = require("optimist").argv;
 
 	// Config object
-	var _quiet = argv.quiet,
-		_force = argv.force,
+	var _force = argv.force,
 		_verbose = argv.verbose;
-
-	// Dependencies
-	var cp = require("child_process"),
-		fs = require("fs"),
-		path = require("path"),
-		colors = require("colors"),
-		cwd = process.cwd();
 
 	// Deferreds
 	var promise = require("promised-io/promise");

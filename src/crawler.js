@@ -5,12 +5,10 @@ module.exports = function (modernizrPath) {
 	var argv = require("optimist").argv;
 
 	// Config object
-	var _quiet = argv.quiet,
-		_verbose = argv.verbose;
+	var _quiet = argv.quiet;
 
 	// Dependencies
-	var cp = require("child_process"),
-		fs = require("fs"),
+	var fs = require("fs"),
 		cwd = process.cwd(),
 		path = require("path");
 
