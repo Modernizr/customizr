@@ -9,6 +9,7 @@
 			"testProp",
 			"fnBind"
 		],
+        "quiet": false,
 		"uglify" : true,
 		"tests" : [],
 		"excludeTests": [],

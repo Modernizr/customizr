@@ -11,7 +11,7 @@ module.exports = function (modernizrPath) {
 	var promise = require("promised-io/promise");
 
 	// Cache utils
-	var utils;
+    var utils;
 
 	return {
 		writeCodeToFile : function (result, config) {
@@ -51,13 +51,16 @@ module.exports = function (modernizrPath) {
 			}
 
 			if (useCachedVersion) {
-				utils.log.writeln();
 
-				utils.log.writeln("No config or test changes detected".bold.white);
-				utils.log.ok("The build step has been bypassed. Use `--force` to override.".grey);
+				if(!settings.quiet) {
+                    utils.log.writeln();
 
-				if (settings.dest) {
-					utils.log.ok(("Your current file can be found in " + settings.dest).grey);
+                    utils.log.writeln("No config or test changes detected".bold.white);
+                    utils.log.ok("The build step has been bypassed. Use `--force` to override.".grey);
+
+                    if (settings.dest) {
+                        utils.log.ok(("Your current file can be found in " + settings.dest).grey);
+                    }
 				}
 
 				setTimeout(function () {
@@ -71,28 +74,33 @@ module.exports = function (modernizrPath) {
 			}
 
 			// Echo settings
-			utils.log.writeln();
-			utils.log.ok("Ready to build using these settings:");
-			utils.log.ok(options.join(", ").grey);
+            if(!settings.quiet) {
+                utils.log.writeln();
+                utils.log.ok("Ready to build using these settings:");
+                utils.log.ok(options.join(", ").grey);
 
-			if (minify) {
-				utils.log.ok("Your file will be minified with UglifyJS".grey);
-			}
+                if (minify) {
+                    utils.log.ok("Your file will be minified with UglifyJS".grey);
+                }
 
-			utils.log.writeln();
-			utils.log.write("Building your customized Modernizr".bold.white);
+                utils.log.writeln();
+                utils.log.write("Building your customized Modernizr".bold.white);
 
-			_interval = setInterval(function () {
-				utils.log.write(".".grey);
-			}.bind(this), 200);
+                _interval = setInterval(function () {
+                    utils.log.write(".".grey);
+                }.bind(this), 200);
+            }
 
 			var modernizr = require("modernizr");
 
 			modernizr.build(modernizrOptions, function (result) {
-				utils.log.write("...".grey);
-				utils.log.ok();
 
-				clearInterval(_interval);
+                if(!settings.quiet) {
+                    utils.log.write("...".grey);
+                    utils.log.ok();
+
+                    clearInterval(_interval);
+                }
 
 				// Write code to file
 				if (settings.dest) {
