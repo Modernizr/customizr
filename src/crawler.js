@@ -2,6 +2,8 @@
 module.exports = function (modernizrPath) {
 	"use strict";
 
+	var _ = require("underscore");
+
 	// Dependencies
 	var fs = require("fs"),
 		cwd = process.cwd(),
@@ -161,6 +163,9 @@ module.exports = function (modernizrPath) {
 
 			var tests = settings.tests.map(function (test) {
 				var data = metadata.filter(function (data) {
+					if (Array.isArray(test)) {
+						return test.indexOf(data) !== -1 || _.isEqual(test, data.property);
+					}
 					return data.property === test;
 				});
 
