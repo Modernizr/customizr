@@ -35,8 +35,7 @@ describe("customizr", function () {
 		nexpect.spawn(cli, [
 			"--config", settings.custom
 		], {
-			stripColors: true,
-			verbose: true
+			stripColors: true
 		})
 		.wait("Looking for Modernizr references")
 
@@ -69,8 +68,7 @@ describe("customizr", function () {
 		nexpect.spawn(cli, [
 			"--config", settings.custom
 		], {
-			stripColors: true,
-			verbose: true
+			stripColors: true
 		})
 		.wait("Looking for Modernizr references")
 
@@ -103,8 +101,7 @@ describe("customizr", function () {
 			"--config", settings.custom,
 			"--force"
 		], {
-			stripColors: true,
-			verbose: true
+			stripColors: true
 		})
 		.wait("Looking for Modernizr references")
 
@@ -137,8 +134,7 @@ describe("customizr", function () {
 		nexpect.spawn(cli, [
 			"--config", settings.cache
 		], {
-			stripColors: true,
-			verbose: true
+			stripColors: true
 		})
 		.wait("Looking for Modernizr references")
 
@@ -187,8 +183,7 @@ describe("custom builds", function () {
 			nexpect.spawn(cli, [
 				"--config", settings.select
 			], {
-				stripColors: true,
-				verbose: true
+				stripColors: true
 			})
 
 			.wait(">> Explicitly including these tests:")
@@ -256,8 +251,7 @@ describe("custom builds", function () {
 			nexpect.spawn(cli, [
 				"--config", settings.exclude
 			], {
-				stripColors: true,
-				verbose: true
+				stripColors: true
 			})
 
 			.wait(">> Explicitly excluding these tests:")
@@ -307,8 +301,7 @@ describe("custom builds", function () {
 			nexpect.spawn(cli, [
 				"--config", settings.prefixed
 			], {
-				stripColors: true,
-				verbose: true
+				stripColors: true
 			})
 
 			.wait("Looking for Modernizr references")

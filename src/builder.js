@@ -5,8 +5,7 @@ module.exports = function (modernizrPath) {
 	var argv = require("optimist").argv;
 
 	// Config object
-	var _force = argv.force,
-		_verbose = argv.verbose;
+	var _force = argv.force;
 
 	// Deferreds
 	var promise = require("promised-io/promise");
@@ -83,11 +82,9 @@ module.exports = function (modernizrPath) {
 			utils.log.writeln();
 			utils.log.write("Building your customized Modernizr".bold.white);
 
-			if (!_verbose) {
-				_interval = setInterval(function () {
-					utils.log.write(".".grey);
-				}.bind(this), 200);
-			}
+			_interval = setInterval(function () {
+				utils.log.write(".".grey);
+			}.bind(this), 200);
 
 			var modernizr = require("modernizr");
 
