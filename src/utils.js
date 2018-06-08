@@ -6,7 +6,8 @@ module.exports = function (modernizrPath) {
 	var fs = require("fs"),
 		path = require("path"),
 		glob = require("glob"),
-		equal = require("fast-deep-equal"),
+        colors = require("colors"),
+        equal = require("fast-deep-equal"),
 		mkdirp = require("mkdirp"),
 		_ = require("underscore");
 
