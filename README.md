@@ -12,6 +12,36 @@ This configurable task allows you to configure and export a custom Modernizr bui
 
 When you're ready to build, `customizr` will crawl your project for Modernizr test references and save out a minified, uglified, customized version using only the tests you've used in your JavaScript or (S)CSS.
 
+## Example
+
+### CSS / SCSS / LESS
+
+When going through css files, the crawler will not look for `display: flex` but rather if the code contains a css selector that is named like the Modernizr properties
+
+```
+.flexbox {
+  ...
+}
+```
+
+or
+
+```
+.no-flexbox {
+  ...
+}
+```
+
+### Javascript
+
+When going through javascript files, the crawler will look for Modernizr calls like this one:
+
+```
+if (!Modernizr.flexbox) {
+  ...
+}
+```
+
 ## Use with Grunt
 
 A Grunt wrapper is available at: [https://github.com/Modernizr/grunt-modernizr](https://github.com/Modernizr/grunt-modernizr)
