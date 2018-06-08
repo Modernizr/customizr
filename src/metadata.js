@@ -2,11 +2,6 @@
 module.exports = function (modernizrPath) {
 	"use strict";
 
-	// Dependencies
-	var cp = require("child_process"),
-		fs = require("fs"),
-		path = require("path");
-
 	// Deferreds
 	var promise = require("promised-io/promise");
 

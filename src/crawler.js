@@ -2,16 +2,10 @@
 module.exports = function (modernizrPath) {
 	"use strict";
 
-	var argv = require("optimist").argv,
-			_ = require("underscore");
-
-	// Config object
-	var _quiet = argv.quiet,
-		_verbose = argv.verbose;
+	var _ = require("underscore");
 
 	// Dependencies
-	var cp = require("child_process"),
-		fs = require("fs"),
+	var fs = require("fs"),
 		cwd = process.cwd(),
 		path = require("path");
 
@@ -108,7 +102,7 @@ module.exports = function (modernizrPath) {
 
 			var matchedTests = this.matchedTestsInFile[file];
 
-			if (!_quiet && matchedTests && matchedTests.length) {
+			if (!settings.quiet && matchedTests && matchedTests.length) {
 				utils.log.writeln();
 
 				var testCount = matchedTests.length;
@@ -180,7 +174,7 @@ module.exports = function (modernizrPath) {
 				return test.path;
 			});
 
-			if (!_quiet && tests && tests.length) {
+			if (!settings.quiet && tests && tests.length) {
 				utils.log.writeln();
 				utils.log.ok("Explicitly including these tests:");
 				utils.log.ok(tests.map(function (test) {
@@ -198,7 +192,7 @@ module.exports = function (modernizrPath) {
 				return test.path;
 			});
 
-			if (!_quiet && excludedTests && excludedTests.length) {
+			if (!settings.quiet && excludedTests && excludedTests.length) {
 				utils.log.writeln();
 				utils.log.ok("Explicitly excluding these tests:");
 				utils.log.ok(excludedTests.map(function (test) {
@@ -225,7 +219,7 @@ module.exports = function (modernizrPath) {
 			if (settings.crawl !== true && settings.useBuffers !== true) {
 				tests = this.crawler.filterTests(tests);
 
-				if (!_quiet) {
+				if (!settings.quiet) {
 					utils.log.subhead("Skipping file traversal");
 				}
 
@@ -236,7 +230,7 @@ module.exports = function (modernizrPath) {
 				return deferred.promise;
 			}
 
-			if (!_quiet) {
+			if (!settings.quiet) {
 				utils.log.subhead("Looking for Modernizr references");
 			}
 
