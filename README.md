@@ -61,8 +61,7 @@ A sample config file is below. Default values shown:
 		"setClasses",
 		"addTest",
 		"html5printshiv",
-		"testProp",
-		"fnBind"
+		"testProp"
 	],
 
 	// By default, source is uglified before saving
@@ -188,8 +187,7 @@ var settings = {
 		"setClasses",
 		"addTest",
 		"html5printshiv",
-		"testProp",
-		"fnBind"
+		"testProp"
 	],
 	"uglify" : true,
 	"tests" : [],
