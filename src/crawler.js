@@ -38,8 +38,8 @@ module.exports = function (modernizrPath) {
 			var match, regExp, prefix,
 				basename = path.basename(file);
 
-			// JS files
-			if ((/\.js$/).test(basename)) {
+			// JavaScript/CoffeeScript/TypeScript files
+			if ((/\.(js|coffee|ts)$/).test(basename)) {
 				// Don't bother if we don't find a reference to Modernizr in the file...
 				if (!(/Modernizr/im).test(data)) {
 					return;
@@ -47,7 +47,7 @@ module.exports = function (modernizrPath) {
 				// Match usage such as: Modernizr.classname --or-- Modernizr['classname']
 				regExp = new RegExp("(?:\\.|\\[(?:\"|'))(" + type + ")(?![\\w-])(?:(?:\"|')\\])?", "gm");
 			}
-			// If it's not JS, assume it's CSS (or similar, e.g.: LESS, SCSS) files
+			// If it's not script, assume it's CSS (or similar, e.g.: LESS, SCSS) files
 			else {
 				prefix = settings.classPrefix || '';
 				// When no prefix, match usage such as: .classname --or-- .no-classname
