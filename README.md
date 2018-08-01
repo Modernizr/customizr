@@ -122,7 +122,10 @@ A sample config file is below. Default values shown:
 	},
 
 	// Have custom Modernizr tests? Add them here.
-	"customTests" : []
+	"customTests" : [],
+	
+	// Add custom prefix to Modernizr CSS classes
+	"classPrefix" : '' 
 }
 ```
 
@@ -177,6 +180,11 @@ This is an optional parameter.
 
 ###### **`customTests`** (Array, optional)
 Have custom Modernizr tests? Add paths to their location here. The object supports all [minimatch](https://github.com/isaacs/minimatch) options.
+
+This is an optional parameter.
+
+###### **`classPrefix`** (String, optional)
+Add custom prefix to Modernizr classes to avoid clashes with your preexisting class names.
 
 This is an optional parameter.
 
