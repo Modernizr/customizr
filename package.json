@@ -8,8 +8,7 @@
   },
   "scripts": {
     "pretest": "node test/pretest.js",
-    "test": "node test/runner.js",
-    "postinstall": "node scripts/postinstall.js"
+    "test": "node test/runner.js"
   },
   "repository": {
     "type": "git",
