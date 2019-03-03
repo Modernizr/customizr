@@ -9,7 +9,7 @@ module.exports = function (modernizrPath) {
         colors = require("colors"),
         equal = require("fast-deep-equal"),
 		mkdirp = require("mkdirp"),
-		_ = require("underscore");
+		_ = require("lodash");
 
 	// Lovingly lifted verbatim from Grunt: https://github.com/gruntjs/grunt/blob/master/lib/grunt/file.js
 	//
@@ -45,7 +45,7 @@ module.exports = function (modernizrPath) {
 	};
 
 	return {
-		_ : require("underscore"),
+		_ : require("lodash"),
 
 		file : {
 			delete : function (filepath) {

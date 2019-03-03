@@ -30,12 +30,12 @@
     "cross-spawn": "~6.0.5",
     "fast-deep-equal": "~2.0.1",
     "glob": "~7.1.2",
+    "lodash": "^4.17.11",
     "mkdirp": "~0.5.1",
     "modernizr": "~3.6.0",
     "nopt": "~4.0.1",
     "optimist": "~0.6.1",
-    "promised-io": "~0.3.5",
-    "underscore": "~1.9.1"
+    "promised-io": "~0.3.5"
   },
   "devDependencies": {
     "expect.js": "~0.3.1",
