@@ -38,14 +38,15 @@ define(["Modernizr"], function (M) {
 			"indexeddb": M.indexeddb,
 			"indexeddbblob": M.indexeddbblob,
 			"input": M.input,
-			"inputsearchevent": M.search,
+			"inputsearchevent": M.inputsearchevent,
 			"inputtypes": M.inputtypes,
 			"intl": M.intl,
 			"json": M.json,
 			"ligatures": M.ligatures,
 			"lists-reversed": M.olreversed,
 			"mathml": M.mathml,
-			"messagechannel": M.MessageChannel,
+			"media-source-extension-api": M.mediasource,
+			"messagechannel": M.messagechannel,
 			"notification": M.notification,
 			"pagevisibility-api": M.pagevisibility,
 			"performance": M.performance,
@@ -68,7 +69,7 @@ define(["Modernizr"], function (M) {
 			"video": M.video,
 			"vml": M.vml,
 			"web-intents": M.webintents,
-			"webanimations": M.animation,
+			"webanimations": M.webanimations,
 			"webgl": M.webgl,
 			"websockets": M.websockets,
 			"xdomainrequest": M.xdomainrequest
@@ -77,6 +78,7 @@ define(["Modernizr"], function (M) {
 			"download": M.adownload
 		},
 		"audio": {
+			"autoplay": M.audioautoplay,
 			"loop": M.audioloop,
 			"preload": M.audiopreload,
 			"webaudio": M.webaudio
@@ -91,9 +93,7 @@ define(["Modernizr"], function (M) {
 				M["todataurlpng"],
 				M["todataurlwebp"]
 			],
-			"winding": [
-				M["canvaswinding"]
-			]
+			"winding": M.canvaswinding
 		},
 		"crypto": {
 			"getrandomvalues": M.getrandomvalues
@@ -115,6 +115,7 @@ define(["Modernizr"], function (M) {
 			"backgroundsizecover": M.bgsizecover,
 			"borderimage": M.borderimage,
 			"borderradius": M.borderradius,
+			"boxdecorationbreak": M.boxdecorationbreak,
 			"boxshadow": M.boxshadow,
 			"boxsizing": M.boxsizing,
 			"calc": M.csscalc,
@@ -126,6 +127,7 @@ define(["Modernizr"], function (M) {
 				M["cssgridlegacy"]
 			],
 			"cubicbezierrange": M.cubicbezierrange,
+			"customproperties": M.customproperties,
 			"displayrunin": M["display-runin"],
 			"displaytable": M.displaytable,
 			"ellipsis": M.ellipsis,
@@ -137,6 +139,7 @@ define(["Modernizr"], function (M) {
 			"flexboxtweener": M.flexboxtweener,
 			"flexwrap": M.flexwrap,
 			"focuswithin": M.focuswithin,
+			"fontdisplay": M.fontdisplay,
 			"fontface": M.fontface,
 			"generatedcontent": M.generatedcontent,
 			"gradients": M.cssgradients,
@@ -173,6 +176,7 @@ define(["Modernizr"], function (M) {
 			"supports": M.supports,
 			"target": M.target,
 			"textalignlast": M.textalignlast,
+			"textdecoration": M.textdecoration,
 			"textshadow": M.textshadow,
 			"transforms": M.csstransforms,
 			"transforms3d": M.csstransforms3d,
@@ -181,9 +185,7 @@ define(["Modernizr"], function (M) {
 			"transitions": M.csstransitions,
 			"userselect": M.userselect,
 			"valid": M.cssvalid,
-			"variablefonts": [
-				M["variablefonts"]
-			],
+			"variablefonts": M.variablefonts,
 			"vhunit": M.cssvhunit,
 			"vmaxunit": M.cssvmaxunit,
 			"vminunit": M.cssvminunit,
@@ -200,6 +202,7 @@ define(["Modernizr"], function (M) {
 			"dataset": M.dataset,
 			"documentfragment": M.documentfragment,
 			"hidden": M.hidden,
+			"intersection-observer": M.intersectionobserver,
 			"microdata": M.microdata,
 			"mutationObserver": M.mutationobserver,
 			"passiveeventlisteners": M.passiveeventlisteners
@@ -291,6 +294,7 @@ define(["Modernizr"], function (M) {
 			"formaction": M.inputformaction,
 			"formenctype": M.inputformenctype,
 			"formmethod": M.inputformmethod,
+			"formnovalidate": M.inputformnovalidate,
 			"formtarget": M.inputformtarget
 		},
 		"mediaquery": {
@@ -299,6 +303,7 @@ define(["Modernizr"], function (M) {
 		},
 		"network": {
 			"beacon": M.beacon,
+			"connection-effectivetype": M.connectioneffectivetype,
 			"connection": M.lowbandwidth,
 			"eventsource": M.eventsource,
 			"fetch": M.fetch,
@@ -349,6 +354,9 @@ define(["Modernizr"], function (M) {
 			"loop": M.videoloop,
 			"preload": M.videopreload
 		},
+		"webauthn": {
+			"publickeycredential": M.publicKeyCredential
+		},
 		"webgl": {
 			"extensions": M.webglextensions
 		},
@@ -361,9 +369,7 @@ define(["Modernizr"], function (M) {
 			"binary": M.websocketsbinary
 		},
 		"window": {
-			"atob-btoa": [
-				M["atobbtoa"]
-			],
+			"atob-btoa": M.atobbtoa,
 			"framed": M.framed,
 			"matchmedia": M.matchmedia
 		},

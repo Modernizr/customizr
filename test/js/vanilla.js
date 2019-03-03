@@ -37,14 +37,15 @@ var tests = {
 		"indexeddb": Modernizr.indexeddb,
 		"indexeddbblob": Modernizr.indexeddbblob,
 		"input": Modernizr.input,
-		"inputsearchevent": Modernizr.search,
+		"inputsearchevent": Modernizr.inputsearchevent,
 		"inputtypes": Modernizr.inputtypes,
 		"intl": Modernizr.intl,
 		"json": Modernizr.json,
 		"ligatures": Modernizr.ligatures,
 		"lists-reversed": Modernizr.olreversed,
 		"mathml": Modernizr.mathml,
-		"messagechannel": Modernizr.MessageChannel,
+		"media-source-extension-api": Modernizr.mediasource,
+		"messagechannel": Modernizr.messagechannel,
 		"notification": Modernizr.notification,
 		"pagevisibility-api": Modernizr.pagevisibility,
 		"performance": Modernizr.performance,
@@ -67,7 +68,7 @@ var tests = {
 		"video": Modernizr.video,
 		"vml": Modernizr.vml,
 		"web-intents": Modernizr.webintents,
-		"webanimations": Modernizr.animation,
+		"webanimations": Modernizr.webanimations,
 		"webgl": Modernizr.webgl,
 		"websockets": Modernizr.websockets,
 		"xdomainrequest": Modernizr.xdomainrequest
@@ -76,6 +77,7 @@ var tests = {
 		"download": Modernizr.adownload
 	},
 	"audio": {
+		"autoplay": Modernizr.audioautoplay,
 		"loop": Modernizr.audioloop,
 		"preload": Modernizr.audiopreload,
 		"webaudio": Modernizr.webaudio
@@ -90,9 +92,7 @@ var tests = {
 			Modernizr["todataurlpng"],
 			Modernizr["todataurlwebp"]
 		],
-		"winding": [
-			Modernizr["canvaswinding"]
-		]
+		"winding": Modernizr.canvaswinding
 	},
 	"crypto": {
 		"getrandomvalues": Modernizr.getrandomvalues
@@ -114,6 +114,7 @@ var tests = {
 		"backgroundsizecover": Modernizr.bgsizecover,
 		"borderimage": Modernizr.borderimage,
 		"borderradius": Modernizr.borderradius,
+		"boxdecorationbreak": Modernizr.boxdecorationbreak,
 		"boxshadow": Modernizr.boxshadow,
 		"boxsizing": Modernizr.boxsizing,
 		"calc": Modernizr.csscalc,
@@ -125,6 +126,7 @@ var tests = {
 			Modernizr["cssgridlegacy"]
 		],
 		"cubicbezierrange": Modernizr.cubicbezierrange,
+		"customproperties": Modernizr.customproperties,
 		"displayrunin": Modernizr["display-runin"],
 		"displaytable": Modernizr.displaytable,
 		"ellipsis": Modernizr.ellipsis,
@@ -136,6 +138,7 @@ var tests = {
 		"flexboxtweener": Modernizr.flexboxtweener,
 		"flexwrap": Modernizr.flexwrap,
 		"focuswithin": Modernizr.focuswithin,
+		"fontdisplay": Modernizr.fontdisplay,
 		"fontface": Modernizr.fontface,
 		"generatedcontent": Modernizr.generatedcontent,
 		"gradients": Modernizr.cssgradients,
@@ -172,6 +175,7 @@ var tests = {
 		"supports": Modernizr.supports,
 		"target": Modernizr.target,
 		"textalignlast": Modernizr.textalignlast,
+		"textdecoration": Modernizr.textdecoration,
 		"textshadow": Modernizr.textshadow,
 		"transforms": Modernizr.csstransforms,
 		"transforms3d": Modernizr.csstransforms3d,
@@ -180,9 +184,7 @@ var tests = {
 		"transitions": Modernizr.csstransitions,
 		"userselect": Modernizr.userselect,
 		"valid": Modernizr.cssvalid,
-		"variablefonts": [
-			Modernizr["variablefonts"]
-		],
+		"variablefonts": Modernizr.variablefonts,
 		"vhunit": Modernizr.cssvhunit,
 		"vmaxunit": Modernizr.cssvmaxunit,
 		"vminunit": Modernizr.cssvminunit,
@@ -199,6 +201,7 @@ var tests = {
 		"dataset": Modernizr.dataset,
 		"documentfragment": Modernizr.documentfragment,
 		"hidden": Modernizr.hidden,
+		"intersection-observer": Modernizr.intersectionobserver,
 		"microdata": Modernizr.microdata,
 		"mutationObserver": Modernizr.mutationobserver,
 		"passiveeventlisteners": Modernizr.passiveeventlisteners
@@ -290,6 +293,7 @@ var tests = {
 		"formaction": Modernizr.inputformaction,
 		"formenctype": Modernizr.inputformenctype,
 		"formmethod": Modernizr.inputformmethod,
+		"formnovalidate": Modernizr.inputformnovalidate,
 		"formtarget": Modernizr.inputformtarget
 	},
 	"mediaquery": {
@@ -298,6 +302,7 @@ var tests = {
 	},
 	"network": {
 		"beacon": Modernizr.beacon,
+		"connection-effectivetype": Modernizr.connectioneffectivetype,
 		"connection": Modernizr.lowbandwidth,
 		"eventsource": Modernizr.eventsource,
 		"fetch": Modernizr.fetch,
@@ -348,6 +353,9 @@ var tests = {
 		"loop": Modernizr.videoloop,
 		"preload": Modernizr.videopreload
 	},
+	"webauthn": {
+		"publickeycredential": Modernizr.publicKeyCredential
+	},
 	"webgl": {
 		"extensions": Modernizr.webglextensions
 	},
@@ -360,9 +368,7 @@ var tests = {
 		"binary": Modernizr.websocketsbinary
 	},
 	"window": {
-		"atob-btoa": [
-			Modernizr["atobbtoa"]
-		],
+		"atob-btoa": Modernizr.atobbtoa,
 		"framed": Modernizr.framed,
 		"matchmedia": Modernizr.matchmedia
 	},
