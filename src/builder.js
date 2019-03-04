@@ -1,4 +1,3 @@
-/* jshint node: true */
 module.exports = function (modernizrPath) {
 	"use strict";
 
