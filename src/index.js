@@ -1,4 +1,3 @@
-/* jshint node: true */
 module.exports = function (settings, callback) {
 	"use strict";
 
