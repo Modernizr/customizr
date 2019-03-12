@@ -15,7 +15,6 @@
 		"excludeTests": [],
 		"crawl" : true,
 		"useBuffers": false,
-		"classPrefix" : "",
 		"files" : {
 			"src": [
 				"*[^(g|G)runt(file)?].{js,css,scss}",
@@ -23,7 +22,8 @@
 				"!lib/**/*"
 			]
 		},
-		"customTests" : []
+		"customTests" : [],
+		"classPrefix" : ""
 	},
 	"private": {
 		"url" : {
