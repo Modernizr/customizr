@@ -93,6 +93,9 @@ A sample config file is below. Default values shown:
 		"testProp"
 	],
 
+	// By default, the build process is verbose
+	"quiet" : false,
+	
 	// By default, source is uglified before saving
 	"uglify" : true,
 
@@ -143,6 +146,11 @@ This is an optional parameter. If undefined or falsy, `customizr` will return th
 
 ###### **`options`** (Array, optional)
 An array of extra configuration options. Check the extra section on [modernizr.com/download](http://modernizr.com/download/) for complete options. Defaults are as they appear on the official site.
+
+This is an optional parameter.
+
+###### **`quiet`** (Boolean, optional)
+By default, the build process is verbose. Set to true to build silently.
 
 This is an optional parameter.
 
