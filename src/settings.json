@@ -4,10 +4,10 @@
 		"devFile" : false,
 		"dest" : false,
 		"options" : [
+			"setClasses",
 			"addTest",
 			"html5printshiv",
-			"testProp",
-			"fnBind"
+			"testProp"
 		],
         "quiet": false,
 		"uglify" : true,
