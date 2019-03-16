@@ -65,7 +65,6 @@ modernizr.metadata(function (metadata) {
 	// Save test/js/vanilla.js
 	(function () {
 		var vanilla = [
-			"/* jshint sub: true */",
 			"var Modernizr = window.Modernizr;",
 			"var tests = " + string + ";"
 		].join("\n\n");
@@ -76,7 +75,7 @@ modernizr.metadata(function (metadata) {
 	// Save test/js/amd.js
 	(function () {
 		var amd = [
-			"/* jshint sub: true */\n/* global define */",
+			"/* global define */",
 			"define([\"Modernizr\"], function (M) {",
 			"	var tests = " + string.replace(/\n/g, "\n\t").replace(/Modernizr/g, "M") + ";",
 			"	return M;",

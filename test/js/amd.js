@@ -1,4 +1,3 @@
-/* jshint sub: true */
 /* global define */
 
 define(["Modernizr"], function (M) {
