@@ -40,6 +40,6 @@
     "chai": "^4.2.0",
     "fs-extra": "^7.0.1",
     "mocha": "^6.0.2",
-    "nexpect": "^0.5.0"
+    "nexpect": "https://github.com/rejas/nexpect#cross_spawn"
   }
 }
