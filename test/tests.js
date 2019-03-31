@@ -361,3 +361,54 @@ describe("custom builds", function () {
 
 	});
 });
+
+describe("settings", function() {
+    var testsLength = testArray.length,
+        existingBuild = path.join(cwd, "build", "modernizr-package.js");
+
+    it("should honor configs in package.json", function (done) {
+        process.stdout.write("\n\n");
+
+        nexpect.spawn(cli, [
+            "--config", 'package.json'
+        ], {
+            stripColors: true
+        })
+
+            .wait("Looking for Modernizr references")
+
+            .wait(">> " + testsLength + " matches in")
+            .expect(">> " + tests)
+
+            .expect(">> " + testsLength + " matches in")
+            .expect(">> " + tests)
+
+            .expect(">> " + testsLength + " matches in")
+            .expect(">> " + tests)
+
+            .expect(">> Ready to build using these settings:")
+
+            .wait("Building your customized Modernizr").wait("OK")
+            .expect(">> Success! Saved file to build/modernizr-package.js")
+
+            .run(function (err) {
+                if (!err) {
+                    done();
+                } else {
+                    throw err;
+                }
+            });
+
+        describe("should include all tests", function () {
+            var contents;
+
+            testArray.forEach(function (test) {
+                it(test, function (done) {
+                    contents = contents || fs.readFileSync(existingBuild, "utf8");
+                    expect(contents.indexOf(test)).to.not.equal(-1);
+                    done();
+                });
+            });
+        });
+    });
+});
