@@ -187,7 +187,7 @@ describe("custom builds", function () {
 			})
 
 			.wait(">> Explicitly including these tests:")
-			.expect(">> siblinggeneral, svg, webintents")
+			.expect(">> cssgrid,cssgridlegacy, siblinggeneral, svg")
 
 			.expect("Skipping file traversal")
 
@@ -206,7 +206,8 @@ describe("custom builds", function () {
 		describe("should only contain references to bundled tests", function () {
 
 			var includedTestArray = [
-				"webintents",
+				"cssgrid",
+				"cssgridlegacy",
 				"siblinggeneral",
 				"svg"
 			];

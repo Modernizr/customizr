@@ -1,7 +1,7 @@
 {
 	"dest": "build/modernizr-select.js",
 	"tests": [
-		"webintents",
+		["cssgrid", "cssgridlegacy"],
 		"siblinggeneral",
 		"svg"
 	],
