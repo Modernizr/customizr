@@ -51,6 +51,7 @@ var tests = {
 		"pointerlock-api": Modernizr.pointerlock,
 		"postmessage": Modernizr.postmessage,
 		"proximity": Modernizr.proximity,
+		"proxy": Modernizr.Proxy,
 		"queryselector": Modernizr.queryselector,
 		"quota-management-api": Modernizr.quotamanagement,
 		"requestanimationframe": Modernizr.requestanimationframe,
@@ -202,7 +203,9 @@ var tests = {
 		"intersection-observer": Modernizr.intersectionobserver,
 		"microdata": Modernizr.microdata,
 		"mutationObserver": Modernizr.mutationobserver,
-		"passiveeventlisteners": Modernizr.passiveeventlisteners
+		"passiveeventlisteners": Modernizr.passiveeventlisteners,
+		"shadowroot": Modernizr.shadowroot,
+		"shadowrootlegacy": Modernizr.shadowrootlegacy
 	},
 	"elem": {
 		"bdi": Modernizr.bdi,
@@ -277,6 +280,7 @@ var tests = {
 		"crossorigin": Modernizr.imgcrossorigin,
 		"jpeg2000": Modernizr.jpeg2000,
 		"jpegxr": Modernizr.jpegxr,
+		"lazyloading": Modernizr.lazyloading,
 		"sizes": Modernizr.sizes,
 		"srcset": Modernizr.srcset,
 		"webp-alpha": Modernizr.webpalpha,

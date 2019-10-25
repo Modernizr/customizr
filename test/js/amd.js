@@ -53,6 +53,7 @@ define(["Modernizr"], function (M) {
 			"pointerlock-api": M.pointerlock,
 			"postmessage": M.postmessage,
 			"proximity": M.proximity,
+			"proxy": M.Proxy,
 			"queryselector": M.queryselector,
 			"quota-management-api": M.quotamanagement,
 			"requestanimationframe": M.requestanimationframe,
@@ -204,7 +205,9 @@ define(["Modernizr"], function (M) {
 			"intersection-observer": M.intersectionobserver,
 			"microdata": M.microdata,
 			"mutationObserver": M.mutationobserver,
-			"passiveeventlisteners": M.passiveeventlisteners
+			"passiveeventlisteners": M.passiveeventlisteners,
+			"shadowroot": M.shadowroot,
+			"shadowrootlegacy": M.shadowrootlegacy
 		},
 		"elem": {
 			"bdi": M.bdi,
@@ -279,6 +282,7 @@ define(["Modernizr"], function (M) {
 			"crossorigin": M.imgcrossorigin,
 			"jpeg2000": M.jpeg2000,
 			"jpegxr": M.jpegxr,
+			"lazyloading": M.lazyloading,
 			"sizes": M.sizes,
 			"srcset": M.srcset,
 			"webp-alpha": M.webpalpha,
