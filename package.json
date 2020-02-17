@@ -14,10 +14,10 @@
   "dependencies": {
     "colors": "^1.4.0",
     "cross-spawn": "^7.0.1",
-    "fast-deep-equal": "^2.0.1",
-    "glob": "^7.1.5",
+    "fast-deep-equal": "^3.1.1",
+    "glob": "^7.1.6",
     "lodash": "^4.17.15",
-    "mkdirp": "^0.5.1",
+    "mkdirp": "^1.0.3",
     "modernizr": "^3",
     "nopt": "^4.0.1",
     "optimist": "^0.6.1",
@@ -26,7 +26,7 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "fs-extra": "^8.1.0",
-    "mocha": "^6.2.2",
+    "mocha": "^7.0.1",
     "nexpect": "^0.6.0"
   },
   "keywords": [
