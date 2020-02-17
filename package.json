@@ -10,7 +10,16 @@
   "bugs": "https://github.com/Modernizr/customizr/issues",
   "homepage": "https://github.com/Modernizr/customizr",
   "repository": "https://github.com/Modernizr/customizr.git",
-  "author": "Richard Herrera",
+  "author": {
+    "name": "Modernizr",
+    "url": "https://modernizr.com/"
+  },
+  "contributors": [
+    {
+      "name": "Richard Herrera",
+      "url": "https://twitter.com/doctyper"
+    }
+  ],
   "dependencies": {
     "colors": "^1.4.0",
     "cross-spawn": "^7.0.1",
