@@ -135,6 +135,7 @@ var tests = {
 		"flexbox": Modernizr.flexbox,
 		"flexboxlegacy": Modernizr.flexboxlegacy,
 		"flexboxtweener": Modernizr.flexboxtweener,
+		"flexgap": Modernizr.flexgap,
 		"flexwrap": Modernizr.flexwrap,
 		"focuswithin": Modernizr.focuswithin,
 		"fontdisplay": Modernizr.fontdisplay,
@@ -247,7 +248,8 @@ var tests = {
 		"number": Modernizr.es6number,
 		"object": Modernizr.es6object,
 		"promises": Modernizr.promises,
-		"string": Modernizr.es6string
+		"string": Modernizr.es6string,
+		"symbol": Modernizr.es6symbol
 	},
 	"event": {
 		"deviceorientation-motion": [

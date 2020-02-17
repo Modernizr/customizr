@@ -137,6 +137,7 @@ define(["Modernizr"], function (M) {
 			"flexbox": M.flexbox,
 			"flexboxlegacy": M.flexboxlegacy,
 			"flexboxtweener": M.flexboxtweener,
+			"flexgap": M.flexgap,
 			"flexwrap": M.flexwrap,
 			"focuswithin": M.focuswithin,
 			"fontdisplay": M.fontdisplay,
@@ -249,7 +250,8 @@ define(["Modernizr"], function (M) {
 			"number": M.es6number,
 			"object": M.es6object,
 			"promises": M.promises,
-			"string": M.es6string
+			"string": M.es6string,
+			"symbol": M.es6symbol
 		},
 		"event": {
 			"deviceorientation-motion": [
