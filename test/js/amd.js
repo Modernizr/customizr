@@ -250,8 +250,19 @@ define(["Modernizr"], function (M) {
 			"number": M.es6number,
 			"object": M.es6object,
 			"promises": M.promises,
+			"rest-parameters": M.restparameters,
+			"spread-array": M.spreadarray,
+			"string-template": M.stringtemplate,
 			"string": M.es6string,
 			"symbol": M.es6symbol
+		},
+		"es7": {
+			"array": M.es7array,
+			"rest-destructuring": [
+				M["restdestructuringarray"],
+				M["restdestructuringobject"]
+			],
+			"spread-object": M.spreadobject
 		},
 		"event": {
 			"deviceorientation-motion": [

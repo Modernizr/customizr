@@ -248,8 +248,19 @@ var tests = {
 		"number": Modernizr.es6number,
 		"object": Modernizr.es6object,
 		"promises": Modernizr.promises,
+		"rest-parameters": Modernizr.restparameters,
+		"spread-array": Modernizr.spreadarray,
+		"string-template": Modernizr.stringtemplate,
 		"string": Modernizr.es6string,
 		"symbol": Modernizr.es6symbol
+	},
+	"es7": {
+		"array": Modernizr.es7array,
+		"rest-destructuring": [
+			Modernizr["restdestructuringarray"],
+			Modernizr["restdestructuringobject"]
+		],
+		"spread-object": Modernizr.spreadobject
 	},
 	"event": {
 		"deviceorientation-motion": [
