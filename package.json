@@ -38,6 +38,9 @@
     "mocha": "^7.0.1",
     "nexpect": "^0.6.0"
   },
+  "engines": {
+    "node": ">=10"
+  },
   "keywords": [
     "modernizr",
     "customizr"
