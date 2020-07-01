@@ -53,13 +53,17 @@ define(["Modernizr"], function (M) {
 			"pointerlock-api": M.pointerlock,
 			"postmessage": M.postmessage,
 			"proximity": M.proximity,
-			"proxy": M.Proxy,
+			"proxy": M.proxy,
 			"queryselector": M.queryselector,
 			"quota-management-api": M.quotamanagement,
 			"requestanimationframe": M.requestanimationframe,
 			"serviceworker": M.serviceworker,
 			"svg": M.svg,
 			"templatestrings": M.templatestrings,
+			"textencoding": [
+				M["textencoder"],
+				M["textdecoder"]
+			],
 			"touchevents": M.touchevents,
 			"typed-arrays": M.typedarrays,
 			"unicode-range": M.unicoderange,
@@ -243,6 +247,7 @@ define(["Modernizr"], function (M) {
 		"es6": {
 			"array": M.es6array,
 			"arrow": M.arrow,
+			"class": M.es6class,
 			"collections": M.es6collections,
 			"contains": M.contains,
 			"generators": M.generators,
@@ -263,6 +268,9 @@ define(["Modernizr"], function (M) {
 				M["restdestructuringobject"]
 			],
 			"spread-object": M.spreadobject
+		},
+		"es8": {
+			"object": M.es8object
 		},
 		"event": {
 			"deviceorientation-motion": [
@@ -371,7 +379,7 @@ define(["Modernizr"], function (M) {
 			"preload": M.videopreload
 		},
 		"webauthn": {
-			"publickeycredential": M.publicKeyCredential
+			"publickeycredential": M.publickeycredential
 		},
 		"webgl": {
 			"extensions": M.webglextensions

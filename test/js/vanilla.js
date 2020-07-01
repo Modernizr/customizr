@@ -51,13 +51,17 @@ var tests = {
 		"pointerlock-api": Modernizr.pointerlock,
 		"postmessage": Modernizr.postmessage,
 		"proximity": Modernizr.proximity,
-		"proxy": Modernizr.Proxy,
+		"proxy": Modernizr.proxy,
 		"queryselector": Modernizr.queryselector,
 		"quota-management-api": Modernizr.quotamanagement,
 		"requestanimationframe": Modernizr.requestanimationframe,
 		"serviceworker": Modernizr.serviceworker,
 		"svg": Modernizr.svg,
 		"templatestrings": Modernizr.templatestrings,
+		"textencoding": [
+			Modernizr["textencoder"],
+			Modernizr["textdecoder"]
+		],
 		"touchevents": Modernizr.touchevents,
 		"typed-arrays": Modernizr.typedarrays,
 		"unicode-range": Modernizr.unicoderange,
@@ -241,6 +245,7 @@ var tests = {
 	"es6": {
 		"array": Modernizr.es6array,
 		"arrow": Modernizr.arrow,
+		"class": Modernizr.es6class,
 		"collections": Modernizr.es6collections,
 		"contains": Modernizr.contains,
 		"generators": Modernizr.generators,
@@ -261,6 +266,9 @@ var tests = {
 			Modernizr["restdestructuringobject"]
 		],
 		"spread-object": Modernizr.spreadobject
+	},
+	"es8": {
+		"object": Modernizr.es8object
 	},
 	"event": {
 		"deviceorientation-motion": [
@@ -369,7 +377,7 @@ var tests = {
 		"preload": Modernizr.videopreload
 	},
 	"webauthn": {
-		"publickeycredential": Modernizr.publicKeyCredential
+		"publickeycredential": Modernizr.publickeycredential
 	},
 	"webgl": {
 		"extensions": Modernizr.webglextensions
