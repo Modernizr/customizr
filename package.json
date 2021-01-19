@@ -16,18 +16,21 @@
     "cross-spawn": "^7.0.1",
     "fast-deep-equal": "^3.1.1",
     "glob": "^7.1.6",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.20",
     "mkdirp": "^1.0.3",
-    "modernizr": "^3",
+    "modernizr": "^3.11.4",
     "nopt": "^4.0.1",
-    "optimist": "^0.6.1",
-    "promised-io": "^0.3.5"
+    "promised-io": "^0.3.5",
+    "yargs": "^16.2.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
     "fs-extra": "^8.1.0",
-    "mocha": "^7.0.1",
+    "mocha": "^8.2.1",
     "nexpect": "^0.6.0"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.3.1"
   },
   "keywords": [
     "modernizr",
