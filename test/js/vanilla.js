@@ -51,13 +51,17 @@ var tests = {
 		"pointerlock-api": Modernizr.pointerlock,
 		"postmessage": Modernizr.postmessage,
 		"proximity": Modernizr.proximity,
-		"proxy": Modernizr.Proxy,
+		"proxy": Modernizr.proxy,
 		"queryselector": Modernizr.queryselector,
 		"quota-management-api": Modernizr.quotamanagement,
 		"requestanimationframe": Modernizr.requestanimationframe,
 		"serviceworker": Modernizr.serviceworker,
 		"svg": Modernizr.svg,
 		"templatestrings": Modernizr.templatestrings,
+		"textencoding": [
+			Modernizr["textencoder"],
+			Modernizr["textdecoder"]
+		],
 		"touchevents": Modernizr.touchevents,
 		"typed-arrays": Modernizr.typedarrays,
 		"unicode-range": Modernizr.unicoderange,
@@ -241,6 +245,7 @@ var tests = {
 	"es6": {
 		"array": Modernizr.es6array,
 		"arrow": Modernizr.arrow,
+		"class": Modernizr.es6class,
 		"collections": Modernizr.es6collections,
 		"contains": Modernizr.contains,
 		"generators": Modernizr.generators,
@@ -248,8 +253,22 @@ var tests = {
 		"number": Modernizr.es6number,
 		"object": Modernizr.es6object,
 		"promises": Modernizr.promises,
+		"rest-parameters": Modernizr.restparameters,
+		"spread-array": Modernizr.spreadarray,
+		"string-template": Modernizr.stringtemplate,
 		"string": Modernizr.es6string,
 		"symbol": Modernizr.es6symbol
+	},
+	"es7": {
+		"array": Modernizr.es7array,
+		"rest-destructuring": [
+			Modernizr["restdestructuringarray"],
+			Modernizr["restdestructuringobject"]
+		],
+		"spread-object": Modernizr.spreadobject
+	},
+	"es8": {
+		"object": Modernizr.es8object
 	},
 	"event": {
 		"deviceorientation-motion": [
@@ -358,7 +377,7 @@ var tests = {
 		"preload": Modernizr.videopreload
 	},
 	"webauthn": {
-		"publickeycredential": Modernizr.publicKeyCredential
+		"publickeycredential": Modernizr.publickeycredential
 	},
 	"webgl": {
 		"extensions": Modernizr.webglextensions

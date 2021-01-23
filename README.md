@@ -255,5 +255,5 @@ modernizr(settings, function () {
 ```
 
 ## License
-Copyright (c) 2013 Richard Herrera
+Copyright (c) 2020 The Modernizr team
 Licensed under the MIT license.
