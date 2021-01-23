@@ -1,7 +1,7 @@
 module.exports = function (modernizrPath) {
 	"use strict";
 
-	var argv = require("optimist").argv;
+	var argv = require("yargs").argv;
 
 	// Config object
 	var _force = argv.force;
