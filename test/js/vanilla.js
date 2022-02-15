@@ -9,6 +9,7 @@ var tests = {
 		"blob": Modernizr.blobconstructor,
 		"canvas": Modernizr.canvas,
 		"canvastext": Modernizr.canvastext,
+		"clipboard": Modernizr.clipboard,
 		"contenteditable": Modernizr.contenteditable,
 		"contextmenu": Modernizr.contextmenu,
 		"cookies": Modernizr.cookies,
@@ -55,6 +56,7 @@ var tests = {
 		"queryselector": Modernizr.queryselector,
 		"quota-management-api": Modernizr.quotamanagement,
 		"requestanimationframe": Modernizr.requestanimationframe,
+		"scrolltooptions": Modernizr.scrolltooptions,
 		"serviceworker": Modernizr.serviceworker,
 		"svg": Modernizr.svg,
 		"templatestrings": Modernizr.templatestrings,
@@ -77,6 +79,8 @@ var tests = {
 		"xdomainrequest": Modernizr.xdomainrequest
 	},
 	"a": {
+		"aping": Modernizr.aping,
+		"areaping": Modernizr.areaping,
 		"download": Modernizr.adownload
 	},
 	"audio": {
@@ -141,6 +145,7 @@ var tests = {
 		"flexboxtweener": Modernizr.flexboxtweener,
 		"flexgap": Modernizr.flexgap,
 		"flexwrap": Modernizr.flexwrap,
+		"focusvisible": Modernizr.focusvisible,
 		"focuswithin": Modernizr.focuswithin,
 		"fontdisplay": Modernizr.fontdisplay,
 		"fontface": Modernizr.fontface,
@@ -298,6 +303,7 @@ var tests = {
 	},
 	"img": {
 		"apng": Modernizr.apng,
+		"avif": Modernizr.avif,
 		"crossorigin": Modernizr.imgcrossorigin,
 		"jpeg2000": Modernizr.jpeg2000,
 		"jpegxr": Modernizr.jpegxr,
@@ -318,6 +324,9 @@ var tests = {
 		"formmethod": Modernizr.inputformmethod,
 		"formnovalidate": Modernizr.inputformnovalidate,
 		"formtarget": Modernizr.inputformtarget
+	},
+	"link": {
+		"prefetch": Modernizr.prefetch
 	},
 	"mediaquery": {
 		"hovermq": Modernizr.hovermq,
@@ -346,6 +355,7 @@ var tests = {
 		"speech-synthesis": Modernizr.speechsynthesis
 	},
 	"storage": {
+		"indexeddb2": Modernizr.indexeddb2,
 		"localstorage": Modernizr.localstorage,
 		"sessionstorage": Modernizr.sessionstorage,
 		"websqldatabase": Modernizr.websqldatabase
@@ -385,6 +395,7 @@ var tests = {
 	"webrtc": {
 		"datachannel": Modernizr.datachannel,
 		"getusermedia": Modernizr.getusermedia,
+		"mediastream": Modernizr.mediarecorder,
 		"peerconnection": Modernizr.peerconnection
 	},
 	"websockets": {
@@ -393,7 +404,8 @@ var tests = {
 	"window": {
 		"atob-btoa": Modernizr.atobbtoa,
 		"framed": Modernizr.framed,
-		"matchmedia": Modernizr.matchmedia
+		"matchmedia": Modernizr.matchmedia,
+		"resizeobserver": Modernizr.resizeobserver
 	},
 	"workers": {
 		"blobworkers": Modernizr.blobworkers,

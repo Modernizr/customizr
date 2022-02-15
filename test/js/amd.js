@@ -11,6 +11,7 @@ define(["Modernizr"], function (M) {
 			"blob": M.blobconstructor,
 			"canvas": M.canvas,
 			"canvastext": M.canvastext,
+			"clipboard": M.clipboard,
 			"contenteditable": M.contenteditable,
 			"contextmenu": M.contextmenu,
 			"cookies": M.cookies,
@@ -57,6 +58,7 @@ define(["Modernizr"], function (M) {
 			"queryselector": M.queryselector,
 			"quota-management-api": M.quotamanagement,
 			"requestanimationframe": M.requestanimationframe,
+			"scrolltooptions": M.scrolltooptions,
 			"serviceworker": M.serviceworker,
 			"svg": M.svg,
 			"templatestrings": M.templatestrings,
@@ -79,6 +81,8 @@ define(["Modernizr"], function (M) {
 			"xdomainrequest": M.xdomainrequest
 		},
 		"a": {
+			"aping": M.aping,
+			"areaping": M.areaping,
 			"download": M.adownload
 		},
 		"audio": {
@@ -143,6 +147,7 @@ define(["Modernizr"], function (M) {
 			"flexboxtweener": M.flexboxtweener,
 			"flexgap": M.flexgap,
 			"flexwrap": M.flexwrap,
+			"focusvisible": M.focusvisible,
 			"focuswithin": M.focuswithin,
 			"fontdisplay": M.fontdisplay,
 			"fontface": M.fontface,
@@ -300,6 +305,7 @@ define(["Modernizr"], function (M) {
 		},
 		"img": {
 			"apng": M.apng,
+			"avif": M.avif,
 			"crossorigin": M.imgcrossorigin,
 			"jpeg2000": M.jpeg2000,
 			"jpegxr": M.jpegxr,
@@ -320,6 +326,9 @@ define(["Modernizr"], function (M) {
 			"formmethod": M.inputformmethod,
 			"formnovalidate": M.inputformnovalidate,
 			"formtarget": M.inputformtarget
+		},
+		"link": {
+			"prefetch": M.prefetch
 		},
 		"mediaquery": {
 			"hovermq": M.hovermq,
@@ -348,6 +357,7 @@ define(["Modernizr"], function (M) {
 			"speech-synthesis": M.speechsynthesis
 		},
 		"storage": {
+			"indexeddb2": M.indexeddb2,
 			"localstorage": M.localstorage,
 			"sessionstorage": M.sessionstorage,
 			"websqldatabase": M.websqldatabase
@@ -387,6 +397,7 @@ define(["Modernizr"], function (M) {
 		"webrtc": {
 			"datachannel": M.datachannel,
 			"getusermedia": M.getusermedia,
+			"mediastream": M.mediarecorder,
 			"peerconnection": M.peerconnection
 		},
 		"websockets": {
@@ -395,7 +406,8 @@ define(["Modernizr"], function (M) {
 		"window": {
 			"atob-btoa": M.atobbtoa,
 			"framed": M.framed,
-			"matchmedia": M.matchmedia
+			"matchmedia": M.matchmedia,
+			"resizeobserver": M.resizeobserver
 		},
 		"workers": {
 			"blobworkers": M.blobworkers,
