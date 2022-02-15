@@ -1,7 +1,7 @@
 # customizr
 
 [![Build Status](https://github.com/Modernizr/customizr/actions/workflows/testing.yml/badge.svg)](https://github.com/Modernizr/customizr/actions/workflows/testing.yml)
-[![NPM](https://nodei.co/npm/customizr.png?compact=true)](https://nodei.co/npm/customizr/)
+[![npm version](https://badge.fury.io/js/customizr.svg)](https://badge.fury.io/js/customizr)
 
 ##### *tl;dr:* This tool crawls through your project files, gathers up your references to Modernizr tests and outputs a lean, mean Modernizr machine.
 
@@ -254,5 +254,5 @@ modernizr(settings, function () {
 ```
 
 ## License
-Copyright (c) 2021 The Modernizr team
+Copyright (c) 2022 The Modernizr team
 Licensed under the MIT license.
