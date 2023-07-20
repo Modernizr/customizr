@@ -29,7 +29,8 @@
     "mkdirp": "^1.0.4",
     "modernizr": "^3",
     "nopt": "^5.0.0",
-    "promised-io": "^0.3.6"
+    "promised-io": "^0.3.6",
+    "yargs": "^17.7.2"
   },
   "devDependencies": {
     "chai": "^4.3.6",
