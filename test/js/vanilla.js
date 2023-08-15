@@ -108,6 +108,7 @@ var tests = {
 		"all": Modernizr.cssall,
 		"animations": Modernizr.cssanimations,
 		"appearance": Modernizr.appearance,
+		"aspectratio": Modernizr.aspectratio,
 		"backdropfilter": Modernizr.backdropfilter,
 		"backgroundblendmode": Modernizr.backgroundblendmode,
 		"backgroundcliptext": Modernizr.backgroundcliptext,
@@ -405,6 +406,7 @@ var tests = {
 		"atob-btoa": Modernizr.atobbtoa,
 		"framed": Modernizr.framed,
 		"matchmedia": Modernizr.matchmedia,
+		"pushmanager": Modernizr.pushmanager,
 		"resizeobserver": Modernizr.resizeobserver
 	},
 	"workers": {
@@ -412,6 +414,7 @@ var tests = {
 		"dataworkers": Modernizr.dataworkers,
 		"sharedworkers": Modernizr.sharedworkers,
 		"transferables": Modernizr.transferables,
-		"webworkers": Modernizr.webworkers
+		"webworkers": Modernizr.webworkers,
+		"workertypeoption": Modernizr.workertypeoption
 	}
 };

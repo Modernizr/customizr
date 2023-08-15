@@ -110,6 +110,7 @@ define(["Modernizr"], function (M) {
 			"all": M.cssall,
 			"animations": M.cssanimations,
 			"appearance": M.appearance,
+			"aspectratio": M.aspectratio,
 			"backdropfilter": M.backdropfilter,
 			"backgroundblendmode": M.backgroundblendmode,
 			"backgroundcliptext": M.backgroundcliptext,
@@ -407,6 +408,7 @@ define(["Modernizr"], function (M) {
 			"atob-btoa": M.atobbtoa,
 			"framed": M.framed,
 			"matchmedia": M.matchmedia,
+			"pushmanager": M.pushmanager,
 			"resizeobserver": M.resizeobserver
 		},
 		"workers": {
@@ -414,7 +416,8 @@ define(["Modernizr"], function (M) {
 			"dataworkers": M.dataworkers,
 			"sharedworkers": M.sharedworkers,
 			"transferables": M.transferables,
-			"webworkers": M.webworkers
+			"webworkers": M.webworkers,
+			"workertypeoption": M.workertypeoption
 		}
 	};
 
