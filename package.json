@@ -42,7 +42,7 @@
     "fsevents": "^2.3.3"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
   "keywords": [
     "modernizr",
