@@ -28,7 +28,7 @@
     "lodash": "^4.17.21",
     "mkdirp": "^1.0.4",
     "modernizr": "^3",
-    "nopt": "^5.0.0",
+    "nopt": "^8.0.0",
     "promised-io": "^0.3.6",
     "yargs": "^17.7.2"
   },
