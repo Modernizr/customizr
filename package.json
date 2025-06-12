@@ -1,7 +1,7 @@
 {
   "name": "customizr",
   "description": "Build out a lean, mean Modernizr machine.",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "main": "src",
   "bin": {
     "customizr": "bin/customizr"
